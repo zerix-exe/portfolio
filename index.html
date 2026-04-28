@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Titouan MURE — Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <button class="nav-logo-photo" onclick="openDoc('images/cv.pdf','CV — Titouan MURE')" title="Voir mon CV">
+      <img src="images/photo.jpg" alt="Titouan MURE" class="nav-avatar" />
+      <span class="nav-avatar-name">Titouan MURE</span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#projets-section">Projets</a></li>
+      <li><button class="nav-cta" onclick="toggleContactPopup(event)">Contact</button></li>
+    </ul>
+    <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MENU MOBILE -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="toggleMenu()">À propos</a>
+    <a href="#competences" onclick="toggleMenu()">Compétences</a>
+    <a href="#parcours" onclick="toggleMenu()">Parcours</a>
+    <a href="#projets-section" onclick="toggleMenu()">Projets</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="top">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow reveal">
+          <span class="hero-dot"></span>
+          Disponible · Alternance Septembre 2026
+        </div>
+        <h1 class="reveal">
+          Titouan<br/>
+          <span class="hero-name-accent">MURE</span>
+        </h1>
+        <p class="hero-role reveal">Administrateur Systèmes &amp; Réseaux</p>
+        <p class="hero-desc reveal">
+          Étudiant en 3ème année de BUT Informatique DACS · En stage au Département de la Loire (CD42) · Futur étudiant au CESI en Mastère Management des Infrastructures &amp; Cybersécurité des SI
+        </p>
+        <div class="hero-btns reveal">
+          <a href="#projets-section" class="btn btn-primary">Voir mes projets</a>
+          <a href="https://www.linkedin.com/in/titouan-mure-adminsys/" target="_blank" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+        <div class="hero-chips reveal">
+          <span class="hero-chip">🌐 Réseau & Infrastructure</span>
+          <span class="hero-chip">🛡️ Cybersécurité</span>
+          <span class="hero-chip">⚙️ Administration Système</span>
+          <span class="hero-chip">🐍 Scripting</span>
+        </div>
+      </div>
+      <div class="hero-photo-col reveal">
+        <div class="hero-photo-wrap">
+          <img src="images/photo.jpg" alt="Titouan MURE" class="hero-photo" />
+          <div class="hero-photo-ring"></div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-dot"></div>
+          <div class="hero-card-text">
+            <div class="hero-card-title">En alternance dès</div>
+            <div class="hero-card-val">Septembre 2026</div>
+          </div>
+        </div>
+        <div class="hero-card hero-card-2">
+          <div class="hero-card-dot blue"></div>
+          <div class="hero-card-text">
+            <div class="hero-card-title">CESI · Mastère</div>
+            <div class="hero-card-val">Infra & Cybersécurité</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="hero-scroll-hint">
+      <span>Découvrir</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </a>
+  </section>
+
+  <!-- ═══ À PROPOS ═══ -->
+  <section class="section section-alt" id="about">
+    <div class="section-inner">
+      <div class="section-label reveal">À propos</div>
+      <h2 class="section-title reveal">Qui suis-je ?</h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>Je suis <strong>Titouan MURE</strong>, né le 27/07/2005 à Saint-Étienne (42). Actuellement en <strong>3ème année de BUT Informatique</strong>, parcours Administration, Systèmes, Réseaux &amp; Cybersécurité (DACS) à l'IUT de Metz.</p>
+          <p>Je réalise mon stage de fin de BUT au <strong>Département de la Loire (CD42)</strong>, au sein de la DSI — Pôle Réseau &amp; Infrastructure, où je déploie une solution de supervision complète sous Zabbix 7.0 couvrant 50 collèges, 700+ switches et 200+ serveurs.</p>
+          <p>À la rentrée 2026, j'intègre le <strong>CESI</strong> pour un Mastère en <em>Management des Infrastructures &amp; Cybersécurité des SI</em> (Bac+5, titre RNCP niveau 7) en alternance. Je suis actuellement en recherche d'une entreprise partenaire.</p>
+          <div class="about-infos">
+            <div class="about-info-item"><span class="about-info-icon">📍</span><span>Saint-Étienne (42) · Permis B</span></div>
+            <div class="about-info-item"><span class="about-info-icon">📧</span><a href="mailto:mure.titouan@gmail.com">mure.titouan@gmail.com</a></div>
+            <div class="about-info-item"><span class="about-info-icon">📞</span><span>06 12 74 25 67</span></div>
+            <div class="about-info-item"><span class="about-info-icon">🌐</span><span>Français C2 · Anglais B2</span></div>
+          </div>
+        </div>
+        <div class="about-cards reveal">
+          <div class="about-stat-card">
+            <div class="asc-num">9+</div>
+            <div class="asc-label">Projets réalisés</div>
+          </div>
+          <div class="about-stat-card">
+            <div class="asc-num">700<span>+</span></div>
+            <div class="asc-label">Switches supervisés</div>
+          </div>
+          <div class="about-stat-card">
+            <div class="asc-num">2</div>
+            <div class="asc-label">Stages effectués</div>
+          </div>
+          <div class="about-stat-card blue">
+            <div class="asc-num">Bac+5</div>
+            <div class="asc-label">Objectif CESI 2028</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ COMPÉTENCES ═══ -->
+  <section class="section" id="competences">
+    <div class="section-inner">
+      <div class="section-label reveal">Compétences</div>
+      <h2 class="section-title reveal">Stack technique</h2>
+      <p class="section-desc reveal">Des compétences acquises sur le terrain — en stage, en SAE et en projets personnels.</p>
+      <div class="skills-grid">
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">🌐</div>
+          <h3>Réseaux & Infrastructure</h3>
+          <div class="skill-tags">
+            <span class="skill-tag blue">Cisco Switch/Routeur</span>
+            <span class="skill-tag blue">VLANs</span>
+            <span class="skill-tag">ACL</span>
+            <span class="skill-tag">Spanning-Tree</span>
+            <span class="skill-tag">Adressage IP</span>
+            <span class="skill-tag">Routage statique</span>
+            <span class="skill-tag">SNMP</span>
+            <span class="skill-tag">SSH</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-1">
+          <div class="skill-card-icon">🖥️</div>
+          <h3>Administration Systèmes</h3>
+          <div class="skill-tags">
+            <span class="skill-tag blue">Windows Server</span>
+            <span class="skill-tag blue">Active Directory</span>
+            <span class="skill-tag">GPO</span>
+            <span class="skill-tag">DNS</span>
+            <span class="skill-tag">Linux / Ubuntu</span>
+            <span class="skill-tag">VMware</span>
+            <span class="skill-tag">Proxmox</span>
+            <span class="skill-tag">vSphere</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-2">
+          <div class="skill-card-icon">🛡️</div>
+          <h3>Cybersécurité</h3>
+          <div class="skill-tags">
+            <span class="skill-tag blue">Nmap</span>
+            <span class="skill-tag blue">Gobuster</span>
+            <span class="skill-tag">TLS/SSL</span>
+            <span class="skill-tag">Pentest</span>
+            <span class="skill-tag">Firewall</span>
+            <span class="skill-tag">Durcissement</span>
+            <span class="skill-tag">SELinux</span>
+            <span class="skill-tag">UFW</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">⚙️</div>
+          <h3>Supervision & Monitoring</h3>
+          <div class="skill-tags">
+            <span class="skill-tag blue">Zabbix 7.0</span>
+            <span class="skill-tag">API REST</span>
+            <span class="skill-tag">CDP</span>
+            <span class="skill-tag">ICMP</span>
+            <span class="skill-tag">Alertes email</span>
+            <span class="skill-tag">Event Viewer</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-1">
+          <div class="skill-card-icon">💻</div>
+          <h3>Scripting & Dev</h3>
+          <div class="skill-tags">
+            <span class="skill-tag blue">Bash</span>
+            <span class="skill-tag blue">Python</span>
+            <span class="skill-tag">PowerShell</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Langage C</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Spring Boot</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-2">
+          <div class="skill-card-icon">🗄️</div>
+          <h3>Bases de données & DevOps</h3>
+          <div class="skill-tags">
+            <span class="skill-tag blue">MySQL</span>
+            <span class="skill-tag blue">MariaDB</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">GitHub Actions</span>
+            <span class="skill-tag">Merise</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SAVOIR-ÊTRE ═══ -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-label reveal">Savoir-être</div>
+      <h2 class="section-title reveal">Qualités professionnelles</h2>
+      <div class="softs-grid reveal">
+        <div class="soft-item"><span>🎯</span> Rigueur opérationnelle</div>
+        <div class="soft-item"><span>🔒</span> Fiabilité &amp; discrétion</div>
+        <div class="soft-item"><span>🔍</span> Curiosité technique</div>
+        <div class="soft-item"><span>🤝</span> Travail en équipe</div>
+        <div class="soft-item"><span>📚</span> Apprentissage autonome</div>
+        <div class="soft-item"><span>🛠️</span> Résolution de problèmes</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PARCOURS ═══ -->
+  <section class="section" id="parcours">
+    <div class="section-inner">
+      <div class="section-label reveal">Parcours</div>
+      <h2 class="section-title reveal">Formations &amp; Expériences</h2>
+
+      <!-- EXPÉRIENCES -->
+      <div class="parcours-subtitle reveal">💼 Expériences professionnelles</div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="tl-date">Fév – Juin 2026</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <h3>Administrateur Réseau — Stage</h3>
+            <div class="tl-place">Département de la Loire (CD42) · Saint-Étienne · DSI Réseau &amp; Infrastructure</div>
+            <ul>
+              <li>Déploiement et configuration de Zabbix 7.0 pour la supervision de 50 collèges</li>
+              <li>Scripts Bash/Python d'automatisation + API REST Zabbix</li>
+              <li>Cartographie topologique via CDP/SSH · Alertes e-mail HTML</li>
+              <li>Administration systèmes Windows Server / Linux (AD, GPO, gestion de parc)</li>
+              <li>Audit et application des bonnes pratiques de cybersécurité en DSI</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="tl-date">Avr – Mai 2025</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <h3>Administrateur Réseau — Stage</h3>
+            <div class="tl-place">Clextral · Firminy</div>
+            <ul>
+              <li>Configuration de switches Aruba (VLAN, trunk, QoS)</li>
+              <li>Administration Active Directory : comptes, OU, stratégies de groupe</li>
+              <li>Intégration de postes Windows en domaine (jointure, déploiement)</li>
+              <li>Participation à une migration système critique</li>
+              <li>Diagnostic et support réseau niveau 1/2</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMATIONS -->
+      <div class="parcours-subtitle reveal" style="margin-top:60px;">🎓 Formations</div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="tl-date">2026 – 2028</div>
+          <div class="tl-dot tl-dot-future"></div>
+          <div class="tl-content tl-future">
+            <h3>Mastère Management des Infrastructures &amp; Cybersécurité des SI</h3>
+            <div class="tl-place">CESI · Titre RNCP niveau 7 (Bac+5) · Alternance</div>
+            <p>Sécurisation des SI, gestion des risques, audit, cloud, pilotage de projets IT</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="tl-date">2023 – 2026</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <h3>BUT Informatique — DACS</h3>
+            <div class="tl-place">IUT de Metz · Université de Lorraine</div>
+            <p>Administration réseaux &amp; systèmes, virtualisation, cybersécurité</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="tl-date">2020 – 2023</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <h3>Baccalauréat Technologique STI2D</h3>
+            <div class="tl-place">Lycée de Saint-Étienne · Option Systèmes d'Information et Numérique</div>
+            <p>Mention Assez Bien</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="parcours-subtitle reveal" style="margin-top:60px;">📜 Certifications &amp; Autoformation</div>
+      <div class="cert-grid reveal">
+        <div class="cert-item"><div class="cert-icon">🔗</div><div><div class="cert-name">CCNA 1 — Introduction aux réseaux</div><div class="cert-org">Cisco</div></div></div>
+        <div class="cert-item"><div class="cert-icon">🔗</div><div><div class="cert-name">CCNA 2 — Switching, Routing &amp; Wireless</div><div class="cert-org">Cisco</div></div></div>
+        <div class="cert-item"><div class="cert-icon">🛡️</div><div><div class="cert-name">Introduction à la cybersécurité</div><div class="cert-org">Cisco</div></div></div>
+        <div class="cert-item"><div class="cert-icon">🔥</div><div><div class="cert-name">NSE 1 — Paysage des menaces</div><div class="cert-org">Fortinet</div></div></div>
+        <div class="cert-item"><div class="cert-icon">☁️</div><div><div class="cert-name">Sécurité, conformité &amp; identité</div><div class="cert-org">Microsoft Learn</div></div></div>
+        <div class="cert-item"><div class="cert-icon">💻</div><div><div class="cert-name">Sessions PowerShell persistantes</div><div class="cert-org">Microsoft Learn</div></div></div>
+        <div class="cert-item"><div class="cert-icon">🖥️</div><div><div class="cert-name">Outils d'administration Windows Server</div><div class="cert-org">Microsoft Learn</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROJETS ═══ -->
+  <section class="section section-alt" id="projets-section">
+    <div class="section-inner">
+      <div class="section-label reveal">Projets</div>
+      <h2 class="section-title reveal">Mes réalisations</h2>
+      <p class="section-desc reveal">9 projets académiques et professionnels — du stage au premier projet de programmation.</p>
+      <div class="projets-preview">
+        <div class="pp-card reveal" style="background:linear-gradient(135deg,#0051a2,#0071e3)">
+          <div class="pp-icon">📡</div>
+          <div class="pp-title">Supervision Réseau</div>
+          <div class="pp-sub">Zabbix · CD42 · Stage 2026</div>
+        </div>
+        <div class="pp-card reveal reveal-delay-1" style="background:linear-gradient(135deg,#1e2433,#fbbf24)">
+          <div class="pp-icon">🏢</div>
+          <div class="pp-title">Optimisation AD</div>
+          <div class="pp-sub">DNS · GPO · LAN/DMZ</div>
+        </div>
+        <div class="pp-card reveal reveal-delay-2" style="background:linear-gradient(135deg,#065f46,#059669)">
+          <div class="pp-icon">👕</div>
+          <div class="pp-title">FitPick</div>
+          <div class="pp-sub">1er de promotion · Full-stack</div>
+        </div>
+        <div class="pp-card reveal" style="background:linear-gradient(135deg,#1e3a5f,#0078d4)">
+          <div class="pp-icon">🛡️</div>
+          <div class="pp-title">Active Directory</div>
+          <div class="pp-sub">Windows Server · GPO · DNS</div>
+        </div>
+        <div class="pp-card reveal reveal-delay-1" style="background:linear-gradient(135deg,#07090f,#ef4444)">
+          <div class="pp-icon">🔍</div>
+          <div class="pp-title">Infra Sécurisée</div>
+          <div class="pp-sub">Proxmox · TLS · Pentest</div>
+        </div>
+        <div class="pp-card pp-card-more reveal reveal-delay-2">
+          <div class="pp-more-num">+4</div>
+          <div class="pp-more-text">autres projets</div>
+        </div>
+      </div>
+      <div class="projets-cta reveal">
+        <a href="projets.html" class="btn btn-primary">Voir tous les projets →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DOCUMENTS ═══ -->
+  <section class="section" id="documents">
+    <div class="section-inner">
+      <div class="section-label reveal">Documents</div>
+      <h2 class="section-title reveal">CV &amp; Lettre de motivation</h2>
+      <p class="section-desc reveal">Consultez mes documents de candidature directement en ligne.</p>
+      <div class="docs-grid">
+        <div class="doc-card reveal" onclick="openDoc('images/cv.pdf', 'CV — Titouan MURE')">
+          <div class="doc-icon">📄</div>
+          <div class="doc-title">Curriculum Vitae</div>
+          <div class="doc-desc">Mon parcours, compétences et expériences</div>
+          <button class="doc-btn">Voir le CV</button>
+        </div>
+        <div class="doc-card reveal reveal-delay-1" onclick="openDoc('images/lettre-motivation.pdf', 'Lettre de motivation — Titouan MURE')">
+          <div class="doc-icon">✉️</div>
+          <div class="doc-title">Lettre de motivation</div>
+          <div class="doc-desc">Ma candidature pour une alternance</div>
+          <button class="doc-btn">Voir la lettre</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="section section-alt" id="contact">
+    <div class="section-inner contact-inner">
+      <div class="section-label reveal">Contact</div>
+      <h2 class="section-title reveal">Travaillons ensemble</h2>
+      <p class="section-desc reveal">Je recherche une alternance dès septembre 2026 dans le domaine des infrastructures et de la cybersécurité.</p>
+      <div class="contact-grid reveal">
+        <a href="mailto:mure.titouan@gmail.com" class="contact-card">
+          <div class="contact-card-icon">📧</div>
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-val">mure.titouan@gmail.com</div>
+        </a>
+        <a href="https://www.linkedin.com/in/titouan-mure-adminsys/" target="_blank" class="contact-card">
+          <div class="contact-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          <div class="contact-card-label">LinkedIn</div>
+          <div class="contact-card-val">Titouan MURE</div>
+        </a>
+        <div class="contact-card no-link">
+          <div class="contact-card-icon">📍</div>
+          <div class="contact-card-label">Localisation</div>
+          <div class="contact-card-val">Saint-Étienne (42) · Permis B</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-name">Titouan MURE</div>
+      <div class="footer-sub">BUT Informatique DACS · IUT de Metz · Promo 2023–2026</div>
+      <div class="footer-links">
+        <a href="#top">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="mailto:mure.titouan@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/titouan-mure-adminsys/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- POPUP CONTACT -->
+  <div class="contact-popup-overlay" id="contactOverlay" onclick="closeContactPopup()">
+    <div class="contact-popup" id="contactPopup" onclick="event.stopPropagation()">
+      <button class="contact-popup-close" onclick="closeContactPopup()">✕</button>
+      <div class="contact-popup-title">Me contacter</div>
+      <div class="contact-popup-sub">Choisissez comment vous souhaitez me joindre</div>
+      <a href="mailto:mure.titouan@gmail.com" class="contact-popup-item" onclick="closeContactPopup()">
+        <div class="cp-icon">📧</div>
+        <div>
+          <div class="cp-label">Email</div>
+          <div class="cp-val">mure.titouan@gmail.com</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/titouan-mure-adminsys/" target="_blank" class="contact-popup-item" onclick="closeContactPopup()">
+        <div class="cp-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+        <div>
+          <div class="cp-label">LinkedIn</div>
+          <div class="cp-val">Titouan MURE</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- MODAL DOCUMENT -->
+  <div class="modal-overlay" id="docModal" onclick="closeDoc()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <span class="modal-title" id="docModalTitle"></span>
+        <button class="modal-close" onclick="closeDoc()">✕</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="docFrame" src="" title="Document"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

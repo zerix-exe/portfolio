@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitPick — Titouan MURE</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <button class="nav-logo-photo" onclick="openCvFromNav()" title="Voir mon CV"><img src="../../images/photo.jpg" alt="Titouan MURE" class="nav-avatar" /><span class="nav-avatar-name">Titouan MURE</span></button>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Accueil</a></li>
+      <li><a href="../../projets.html" class="active">Projets</a></li>
+      <li><button class="nav-cta" onclick="openNavContact()">Contact</button></li>
+    </ul>
+  </nav>
+
+  <!-- BACK -->
+  <div class="back-bar">
+    <div class="back-inner">
+      <a href="../../projets.html" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        Retour aux projets
+      </a>
+      <span class="back-breadcrumb">Projets / FitPick</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="project-hero fp-hero">
+    <div class="project-hero-inner">
+      <div class="project-hero-text">
+        <div class="project-tag-row">
+          <span class="project-chip fp-chip">SAE 3.01 · BUT 2ème année</span>
+          <span class="project-chip blue">Oct 2024 – Jan 2025</span>
+          <span class="project-chip">Université de Lorraine</span>
+        </div>
+        <h1>FitPick<br><span>Pour des tenues qui font la pluie et le beau temps</span></h1>
+        <p class="project-lead">Application web full-stack de recommandations vestimentaires contextualisées, basée sur une architecture REST Spring Boot + React. Évalué meilleure réalisation de l'année — 1er de promotion.</p>
+        <div class="fp-award reveal">
+          <div class="fp-award-icon">🏆</div>
+          <div>
+            <div class="fp-award-title">Meilleure réalisation de l'année</div>
+            <div class="fp-award-sub">1er de promotion · Repris par une association pour personnes en situation de handicap</div>
+          </div>
+        </div>
+        <div class="project-stats-row">
+          <div class="pstat"><div class="pstat-num">366<span>h</span></div><div class="pstat-label">Travail total</div></div>
+          <div class="pstat"><div class="pstat-num">5</div><div class="pstat-label">Développeurs</div></div>
+          <div class="pstat"><div class="pstat-num">3<span>mois</span></div><div class="pstat-label">Durée</div></div>
+          <div class="pstat"><div class="pstat-num">1<span>er</span></div><div class="pstat-label">Promo</div></div>
+        </div>
+      </div>
+      <div class="project-hero-visual">
+        <div class="fp-placeholder-hero">
+          <div class="fp-placeholder-icon">👕</div>
+          <p>Capture d'écran à venir</p>
+        </div>
+        <div class="project-hero-caption">Interface FitPick — Page de recommandation</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRÉSENTATION -->
+  <section class="pblock">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Le projet</div>
+      <h2 class="section-title reveal">C'est quoi FitPick ?</h2>
+      <div class="context-2col reveal">
+        <div class="context-txt">
+          <p>FitPick est une <strong>application web de recommandations vestimentaires intelligentes</strong>. Elle génère des tenues adaptées en combinant trois sources de données : les <strong>conditions météo en temps réel</strong> (API OpenWeatherMap), les <strong>métadonnées vestimentaires</strong> de l'utilisateur (tags, plages thermiques/hygrométriques) et ses <strong>préférences personnelles</strong>.</p>
+          <p>Le projet a été réalisé en équipe de 5 dans le cadre de la SAE 3.01 de 2ème année de BUT Informatique. Suite à sa présentation, FitPick a été <strong>repris par une association</strong> accompagnant des personnes en situation de handicap pour faciliter leur choix vestimentaire.</p>
+          <p>Le projet a été évalué comme <strong>meilleure réalisation de l'année</strong>, ce qui m'a permis d'être premier de promotion grâce à la qualité technique, la rigueur et l'architecture professionnelle apportées.</p>
+        </div>
+        <div class="context-infos">
+          <div class="info-item"><span class="info-label">Contexte</span><span class="info-val">SAE 3.01 — BUT Informatique</span></div>
+          <div class="info-item"><span class="info-label">Équipe</span><span class="info-val">5 développeurs</span></div>
+          <div class="info-item"><span class="info-label">Durée</span><span class="info-val">Oct 2024 → Jan 2025 · 366h</span></div>
+          <div class="info-item"><span class="info-label">Méthode</span><span class="info-val">Agile — Kanban</span></div>
+          <div class="info-item"><span class="info-label">Résultat</span><span class="info-val">🏆 1er de promotion</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section class="pblock pblock-alt">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Architecture</div>
+      <h2 class="section-title reveal">Stack technique</h2>
+      <p class="section-desc reveal">Une architecture full-stack moderne, conteneurisée et déployée via CI/CD.</p>
+
+      <div class="arch-grid reveal">
+        <div class="arch-card backend">
+          <div class="arch-card-label">Backend</div>
+          <div class="arch-card-icon">⚙️</div>
+          <h3>Spring Boot</h3>
+          <ul>
+            <li>Architecture en couches Controller / Service / Repository</li>
+            <li>API REST versionnée</li>
+            <li>Authentification JWT + hashage BCrypt</li>
+            <li>Moteur de recommandation multi-contraintes</li>
+            <li>Schéma BDD UML/ERD normalisé</li>
+          </ul>
+          <div class="arch-chips">
+            <span class="chip blue">Spring Boot</span>
+            <span class="chip">Java</span>
+            <span class="chip">JWT</span>
+            <span class="chip">MySQL</span>
+          </div>
+        </div>
+
+        <div class="arch-card frontend">
+          <div class="arch-card-label">Frontend</div>
+          <div class="arch-card-icon">🎨</div>
+          <h3>React</h3>
+          <ul>
+            <li>SPA avec composants modulaires</li>
+            <li>Hooks avancés &amp; gestion d'état optimisée</li>
+            <li>Routing client-side</li>
+            <li>Formulaires contrôlés</li>
+            <li>Intégration API robuste</li>
+          </ul>
+          <div class="arch-chips">
+            <span class="chip blue">React</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">CSS3</span>
+          </div>
+        </div>
+
+        <div class="arch-card infra">
+          <div class="arch-card-label">Infrastructure</div>
+          <div class="arch-card-icon">🐳</div>
+          <h3>Docker + CI/CD</h3>
+          <ul>
+            <li>Conteneurisation complète (backend, frontend, MySQL)</li>
+            <li>Pipeline CI/CD via GitHub Actions</li>
+            <li>Build, tests JUnit, analyse, staging</li>
+            <li>Pare-feu UFW</li>
+            <li>Documentation UML complète</li>
+          </ul>
+          <div class="arch-chips">
+            <span class="chip blue">Docker</span>
+            <span class="chip">GitHub Actions</span>
+            <span class="chip">JUnit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FONCTIONNALITÉS -->
+  <section class="pblock">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Fonctionnalités</div>
+      <h2 class="section-title reveal">Ce que fait FitPick</h2>
+      <div class="features-grid">
+
+        <div class="feat-card reveal">
+          <div class="feat-icon">🌦️</div>
+          <h3>Météo en temps réel</h3>
+          <p>Intégration de l'API OpenWeatherMap pour récupérer les conditions météo actuelles et adapter les recommandations vestimentaires en conséquence.</p>
+        </div>
+
+        <div class="feat-card reveal reveal-delay-1">
+          <div class="feat-icon">👗</div>
+          <h3>Bibliothèque de vêtements</h3>
+          <p>Chaque utilisateur gère son propre dressing numérique avec tags, plages thermiques/hygrométriques et photos. Les données sont privées et uniques à chaque compte.</p>
+        </div>
+
+        <div class="feat-card reveal reveal-delay-2">
+          <div class="feat-icon">✨</div>
+          <h3>Moteur de recommandation</h3>
+          <p>Algorithme de filtrage multi-contraintes avec matching heuristique et scoring. Analyse météo → détermination des couches nécessaires → génération de la tenue recommandée.</p>
+        </div>
+
+        <div class="feat-card reveal">
+          <div class="feat-icon">🔐</div>
+          <h3>Authentification sécurisée</h3>
+          <p>Système JWT avec rafraîchissement de token, vérification par e-mail, réinitialisation de mot de passe, validation de complexité et messages de feedback utilisateur.</p>
+        </div>
+
+        <div class="feat-card reveal reveal-delay-1">
+          <div class="feat-icon">👔</div>
+          <h3>Bibliothèque de tenues</h3>
+          <p>Sauvegarde et gestion des tenues composées de 2 à 4 vêtements issus du dressing personnel. Consultation, modification et suppression intuitives.</p>
+        </div>
+
+        <div class="feat-card reveal reveal-delay-2">
+          <div class="feat-icon">📊</div>
+          <h3>Gestion de projet Agile</h3>
+          <p>Méthodologie Kanban, analyse des risques, PERT/Gantt, répartition des tâches et 366h de travail documenté. Gestion des risques : dépendances API, sécurité, performances.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS PLACEHOLDER -->
+  <section class="pblock pblock-alt">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Aperçu</div>
+      <h2 class="section-title reveal">Interface de l'application</h2>
+      <p class="section-desc reveal">Les captures d'écran seront ajoutées prochainement.</p>
+      <div class="screenshots-grid reveal">
+        <div class="screenshot-placeholder">
+          <div class="sp-icon">🌦️</div>
+          <div class="sp-label">Page météo & recommandation</div>
+        </div>
+        <div class="screenshot-placeholder">
+          <div class="sp-icon">👗</div>
+          <div class="sp-label">Bibliothèque de vêtements</div>
+        </div>
+        <div class="screenshot-placeholder">
+          <div class="sp-icon">👔</div>
+          <div class="sp-label">Bibliothèque de tenues</div>
+        </div>
+        <div class="screenshot-placeholder">
+          <div class="sp-icon">👤</div>
+          <div class="sp-label">Page de profil</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="pblock">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Technologies</div>
+      <h2 class="section-title reveal">Stack complète</h2>
+      <div class="stack-grid reveal">
+        <div class="stack-item"><div class="stack-icon">🍃</div><div class="stack-name">Spring Boot</div><div class="stack-type">Backend</div></div>
+        <div class="stack-item"><div class="stack-icon">⚛️</div><div class="stack-name">React</div><div class="stack-type">Frontend</div></div>
+        <div class="stack-item"><div class="stack-icon">☕</div><div class="stack-name">Java</div><div class="stack-type">Langage</div></div>
+        <div class="stack-item"><div class="stack-icon">🗄️</div><div class="stack-name">MySQL</div><div class="stack-type">Base de données</div></div>
+        <div class="stack-item"><div class="stack-icon">🐳</div><div class="stack-name">Docker</div><div class="stack-type">Conteneurisation</div></div>
+        <div class="stack-item"><div class="stack-icon">⚡</div><div class="stack-name">GitHub Actions</div><div class="stack-type">CI/CD</div></div>
+        <div class="stack-item"><div class="stack-icon">🔐</div><div class="stack-name">JWT</div><div class="stack-type">Auth</div></div>
+        <div class="stack-item"><div class="stack-icon">🌦️</div><div class="stack-name">OpenWeatherMap</div><div class="stack-type">API externe</div></div>
+        <div class="stack-item"><div class="stack-icon">🧪</div><div class="stack-name">JUnit</div><div class="stack-type">Tests</div></div>
+        <div class="stack-item"><div class="stack-icon">🔥</div><div class="stack-name">UFW</div><div class="stack-type">Sécurité</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-name">Titouan MURE</div>
+      <div class="footer-sub">BUT Informatique DACS · IUT de Metz · Promo 2023–2026</div>
+      <div class="footer-links">
+        <a href="../../index.html">Accueil</a>
+        <a href="../../projets.html">Projets</a>
+        <a href="https://www.linkedin.com/in/titouan-mure-adminsys/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- MODAL CV NAV -->
+  <style>
+    #navCvModal {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(10px);
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    #navCvModal.open { display: flex; }
+    #navCvModal .ncv-box {
+      background: #fff; border-radius: 20px; width: 100%; max-width: 820px;
+      max-height: 92vh; overflow: hidden; display: flex; flex-direction: column;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      animation: ncvIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes ncvIn {
+      from { opacity:0; transform: scale(0.95) translateY(10px); }
+      to   { opacity:1; transform: scale(1) translateY(0); }
+    }
+    #navCvModal .ncv-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 24px; border-bottom: 1px solid #e8e8ed;
+    }
+    #navCvModal .ncv-title { font-size: 1rem; font-weight: 600; color: #1d1d1f; }
+    #navCvModal .ncv-close {
+      width: 30px; height: 30px; border-radius: 50%; background: #f5f5f7;
+      border: none; cursor: pointer; font-size: 1rem; display: flex;
+      align-items: center; justify-content: center; color: #424245;
+      transition: background 0.2s; font-family: inherit;
+    }
+    #navCvModal .ncv-close:hover { background: #d2d2d7; }
+    #navCvModal iframe { width: 100%; height: 78vh; border: none; display: block; }
+  </style>
+  <div id="navCvModal" onclick="closeNavCv()">
+    <div class="ncv-box" onclick="event.stopPropagation()">
+      <div class="ncv-header">
+        <span class="ncv-title">CV &mdash; Titouan MURE</span>
+        <button class="ncv-close" onclick="closeNavCv()">&#10005;</button>
+      </div>
+      <iframe src="../../images/cv.pdf" title="CV Titouan MURE"></iframe>
+    </div>
+  </div>
+  <script>
+    function openCvFromNav() {
+      document.getElementById('navCvModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNavCv() {
+      document.getElementById('navCvModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNavCv();
+    });
+  </script>
+
+  <!-- POPUP CONTACT NAV -->
+  <style>
+    #navContactOverlay {
+      display: none; position: fixed; inset: 0; z-index: 9998;
+      background: rgba(0,0,0,0.45); backdrop-filter: blur(8px);
+      align-items: center; justify-content: center;
+    }
+    #navContactOverlay.open { display: flex; }
+    #navContactOverlay .ncp-box {
+      background: #fff; border-radius: 20px; padding: 32px 28px 24px;
+      width: 100%; max-width: 360px; position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      animation: ncpIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes ncpIn {
+      from { opacity:0; transform:scale(0.92) translateY(12px); }
+      to   { opacity:1; transform:scale(1) translateY(0); }
+    }
+    #navContactOverlay .ncp-close {
+      position: absolute; top: 14px; right: 14px;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: #f5f5f7; border: none; cursor: pointer;
+      font-size: 0.9rem; display: flex; align-items: center;
+      justify-content: center; color: #424245; font-family: inherit;
+    }
+    #navContactOverlay .ncp-close:hover { background: #d2d2d7; }
+    #navContactOverlay .ncp-title {
+      font-size: 18px; font-weight: 700; color: #1d1d1f;
+      margin-bottom: 6px; letter-spacing: -0.3px;
+    }
+    #navContactOverlay .ncp-sub {
+      font-size: 13px; color: #6e6e73; margin-bottom: 24px;
+    }
+    #navContactOverlay .ncp-item {
+      display: flex; align-items: center; gap: 16px;
+      padding: 14px 16px; border-radius: 14px;
+      text-decoration: none; color: #1d1d1f;
+      border: 1px solid #e8e8ed; background: #fbfbfd;
+      margin-bottom: 10px; transition: all 0.2s;
+    }
+    #navContactOverlay .ncp-item:last-child { margin-bottom: 0; }
+    #navContactOverlay .ncp-item:hover {
+      background: #e8f0fe; border-color: rgba(0,113,227,0.3);
+      transform: translateY(-2px); box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    #navContactOverlay .ncp-icon {
+      width: 40px; height: 40px; border-radius: 12px;
+      background: #e8f0fe; color: #0071e3;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    #navContactOverlay .ncp-label {
+      font-size: 14px; font-weight: 600; color: #1d1d1f;
+    }
+    #navContactOverlay .ncp-val {
+      font-size: 12px; color: #6e6e73; margin-top: 2px;
+    }
+  </style>
+  <div id="navContactOverlay" onclick="closeNavContact()">
+    <div class="ncp-box" onclick="event.stopPropagation()">
+      <button class="ncp-close" onclick="closeNavContact()">&#10005;</button>
+      <div class="ncp-title">Me contacter</div>
+      <div class="ncp-sub">Choisissez comment vous souhaitez me joindre</div>
+      <a href="mailto:mure.titouan@gmail.com" class="ncp-item" onclick="closeNavContact()">
+        <div class="ncp-icon">&#128231;</div>
+        <div>
+          <div class="ncp-label">Email</div>
+          <div class="ncp-val">mure.titouan@gmail.com</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/titouan-mure-adminsys/" target="_blank" class="ncp-item" onclick="closeNavContact()">
+        <div class="ncp-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#0071e3"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+        <div>
+          <div class="ncp-label">LinkedIn</div>
+          <div class="ncp-val">Titouan Mure</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <script>
+    function openNavContact() {
+      document.getElementById('navContactOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNavContact() {
+      document.getElementById('navContactOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { closeNavContact(); closeNavCv(); }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memoryx — Titouan MURE</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <button class="nav-logo-photo" onclick="openCvFromNav()" title="Voir mon CV"><img src="../../images/photo.jpg" alt="Titouan MURE" class="nav-avatar" /><span class="nav-avatar-name">Titouan MURE</span></button>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Accueil</a></li>
+      <li><a href="../../projets.html" class="active">Projets</a></li>
+      <li><button class="nav-cta" onclick="openNavContact()">Contact</button></li>
+    </ul>
+  </nav>
+
+  <!-- BACK -->
+  <div class="back-bar">
+    <div class="back-inner">
+      <a href="../../projets.html" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        Retour aux projets
+      </a>
+      <span class="back-breadcrumb">Projets / Memoryx</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="project-hero mx-hero">
+    <div class="project-hero-inner">
+      <div class="project-hero-text">
+        <div class="project-tag-row">
+          <span class="project-chip mx-chip">SAE 1.02 · BUT 1ère année</span>
+          <span class="project-chip blue">2023 – 2024</span>
+          <span class="project-chip">Université de Lorraine</span>
+        </div>
+        <h1>Memoryx<br><span>Jeu de Memory en C avec bot IA</span></h1>
+        <p class="project-lead">Développement d'un jeu de Memory en C supportant jusqu'à 4 joueurs humains et un bot capable d'analyser le tableau caché. Projet collaboratif mêlant algorithmique, structures de données et intelligence artificielle basique.</p>
+        <div class="project-stats-row">
+          <div class="pstat"><div class="pstat-num mx-num">4</div><div class="pstat-label">Joueurs max</div></div>
+          <div class="pstat"><div class="pstat-num mx-num">1</div><div class="pstat-label">Bot IA</div></div>
+          <div class="pstat"><div class="pstat-num mx-num">C</div><div class="pstat-label">Langage</div></div>
+          <div class="pstat"><div class="pstat-num mx-num">👥</div><div class="pstat-label">Collaboratif</div></div>
+        </div>
+      </div>
+      <div class="project-hero-visual">
+        <div class="terminal-hero">
+          <div class="terminal-bar">
+            <span class="t-dot red"></span>
+            <span class="t-dot yellow"></span>
+            <span class="t-dot green"></span>
+            <span class="t-title">terminal — ./memoryx</span>
+          </div>
+          <div class="terminal-body">
+            <span class="t-green">Bravo ! Vous avez trouvé une paire et gagné un point.</span><br/>
+            <span class="t-green">paire restante : 6</span><br/><br/>
+            <span class="t-white">Score :</span><br/>
+            <span class="t-cyan">titouan : 1 pts, 4 échecs restants</span><br/><br/>
+            <span class="t-green">titouan, c'est à vous !</span><br/>
+            <span class="t-white">X &nbsp;&nbsp;&nbsp;&nbsp; X &nbsp;&nbsp;&nbsp;&nbsp; X &nbsp;&nbsp;&nbsp;&nbsp; X &nbsp;&nbsp;&nbsp;&nbsp; X</span><br/>
+            <span class="t-white">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X &nbsp;&nbsp;&nbsp;&nbsp; X &nbsp;&nbsp;&nbsp;&nbsp; X</span><br/>
+            <span class="t-white">Choisissez la première carte :</span><br/>
+            <span class="t-white">Ligne : 1 &nbsp; Colonne : </span><span class="t-cursor">█</span>
+          </div>
+        </div>
+        <div class="project-hero-caption">Partie en cours — Tour du joueur titouan</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRÉSENTATION -->
+  <section class="pblock">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Le projet</div>
+      <h2 class="section-title reveal">C'est quoi Memoryx ?</h2>
+      <div class="context-2col reveal">
+        <div class="context-txt">
+          <p>Memoryx est un <strong>jeu de Memory en ligne de commande</strong> développé en C dans le cadre de la SAE 1.02. Le jeu propose un tableau de cartes cachées que les joueurs doivent retourner deux par deux pour trouver les paires identiques.</p>
+          <p>Le défi principal était de programmer un <strong>bot capable d'analyser le tableau caché</strong> et de jouer intelligemment contre un maximum de quatre participants humains. Le bot mémorise les cartes déjà retournées pour optimiser ses choix — une implémentation d'IA basique mais fonctionnelle.</p>
+          <p>Réalisé en <strong>collaboration avec mon équipe</strong>, ce projet m'a permis d'acquérir des compétences en travail collectif, en gestion du code partagé et en résolution de problèmes complexes. Grâce à des ressources en ligne et un investissement soutenu, nous avons surmonté les défis rencontrés.</p>
+        </div>
+        <div class="context-infos">
+          <div class="info-item"><span class="info-label">Contexte</span><span class="info-val">SAE 1.02 — BUT Informatique</span></div>
+          <div class="info-item"><span class="info-label">Langage</span><span class="info-val">C (compilé gcc)</span></div>
+          <div class="info-item"><span class="info-label">Joueurs</span><span class="info-val">1 à 4 humains + 1 bot</span></div>
+          <div class="info-item"><span class="info-label">Mode</span><span class="info-val">Collaboratif en équipe</span></div>
+          <div class="info-item"><span class="info-label">Année</span><span class="info-val">1ère année BUT · 2023–2024</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPTURE + DÉTAIL -->
+  <section class="pblock pblock-alt">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Démonstration</div>
+      <h2 class="section-title reveal">Le jeu en action</h2>
+      <div class="mx-demo reveal">
+        <div class="mx-screenshot" onclick="openLightbox('images/memoryx.png', 'Memoryx — Partie en cours avec score et tableau')">
+          <img src="images/memoryx.png" alt="Memoryx en cours de partie" />
+          <div class="mx-zoom-hint">🔍 Cliquer pour agrandir</div>
+        </div>
+        <div class="mx-annotations">
+          <div class="mx-annot">
+            <div class="mx-annot-dot green"></div>
+            <div>
+              <div class="mx-annot-title">Paire trouvée</div>
+              <div class="mx-annot-desc">Le système confirme en vert quand une paire est trouvée et met à jour le score en temps réel</div>
+            </div>
+          </div>
+          <div class="mx-annot">
+            <div class="mx-annot-dot cyan"></div>
+            <div>
+              <div class="mx-annot-title">Score multi-joueurs</div>
+              <div class="mx-annot-desc">Affichage du score de chaque joueur avec le nombre de points et d'échecs restants</div>
+            </div>
+          </div>
+          <div class="mx-annot">
+            <div class="mx-annot-dot white"></div>
+            <div>
+              <div class="mx-annot-title">Tableau caché</div>
+              <div class="mx-annot-desc">Le tableau affiche X pour les cartes cachées, - pour les paires trouvées et le numéro pour les cartes retournées temporairement</div>
+            </div>
+          </div>
+          <div class="mx-annot">
+            <div class="mx-annot-dot blue"></div>
+            <div>
+              <div class="mx-annot-title">Saisie en ligne/colonne</div>
+              <div class="mx-annot-desc">L'utilisateur choisit ses cartes par coordonnées — interface simple adaptée à la contrainte CLI</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DÉFIS TECHNIQUES -->
+  <section class="pblock">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Défis techniques</div>
+      <h2 class="section-title reveal">Ce qui était complexe à implémenter</h2>
+      <div class="real-grid reveal">
+
+        <div class="real-card-simple">
+          <div class="rcs-icon">🤖</div>
+          <h3>Le bot IA</h3>
+          <p>Programmer un bot qui mémorise les cartes déjà vues et les utilise stratégiquement. Le bot doit simuler la "mémoire" d'un joueur humain en stockant dans un tableau les positions et valeurs des cartes retournées précédemment.</p>
+          <div class="real-chips"><span class="chip blue">Tableaux</span><span class="chip">Algorithme mémoire</span><span class="chip">Stratégie</span></div>
+        </div>
+
+        <div class="real-card-simple">
+          <div class="rcs-icon">📐</div>
+          <h3>Tableau de dimensions variables</h3>
+          <p>Le jeu offre la flexibilité de choisir différentes configurations de tableau. Implémenter une grille de taille variable en C nécessite une gestion dynamique de la mémoire avec <code>malloc</code> et des pointeurs de pointeurs.</p>
+          <div class="real-chips"><span class="chip blue">malloc / free</span><span class="chip">Pointeurs</span><span class="chip">Mémoire dynamique</span></div>
+        </div>
+
+        <div class="real-card-simple">
+          <div class="rcs-icon">👥</div>
+          <h3>Gestion multi-joueurs</h3>
+          <p>Gérer les tours de 1 à 4 joueurs humains en plus du bot, maintenir les scores individuels et afficher les informations de chaque joueur de façon claire en ligne de commande.</p>
+          <div class="real-chips"><span class="chip blue">Structures C</span><span class="chip">Boucles</span><span class="chip">Gestion d'état</span></div>
+        </div>
+
+        <div class="real-card-simple">
+          <div class="rcs-icon">🤝</div>
+          <h3>Travail collaboratif</h3>
+          <p>Coordonner le travail en équipe sur un même projet C — répartition des tâches, cohérence du code, résolution des conflits. Première expérience de développement collectif structuré.</p>
+          <div class="real-chips"><span class="chip blue">Travail en équipe</span><span class="chip">Git</span><span class="chip">Communication</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="pblock pblock-alt">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Technologies</div>
+      <h2 class="section-title reveal">Stack utilisée</h2>
+      <div class="stack-grid reveal">
+        <div class="stack-item"><div class="stack-icon">⚡</div><div class="stack-name">Langage C</div><div class="stack-type">Programmation</div></div>
+        <div class="stack-item"><div class="stack-icon">🔧</div><div class="stack-name">gcc</div><div class="stack-type">Compilateur</div></div>
+        <div class="stack-item"><div class="stack-icon">🖥️</div><div class="stack-name">CLI</div><div class="stack-type">Interface</div></div>
+        <div class="stack-item"><div class="stack-icon">🐧</div><div class="stack-name">Linux</div><div class="stack-type">Environnement</div></div>
+        <div class="stack-item"><div class="stack-icon">🧠</div><div class="stack-name">Algo IA</div><div class="stack-type">Bot</div></div>
+        <div class="stack-item"><div class="stack-icon">📦</div><div class="stack-name">malloc/free</div><div class="stack-type">Mémoire</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-name">Titouan MURE</div>
+      <div class="footer-sub">BUT Informatique DACS · IUT de Metz · Promo 2023–2026</div>
+      <div class="footer-links">
+        <a href="../../index.html">Accueil</a>
+        <a href="../../projets.html">Projets</a>
+        <a href="https://www.linkedin.com/in/titouan-mure-adminsys/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" />
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <script src="../../js/main.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- MODAL CV NAV -->
+  <style>
+    #navCvModal {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(10px);
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    #navCvModal.open { display: flex; }
+    #navCvModal .ncv-box {
+      background: #fff; border-radius: 20px; width: 100%; max-width: 820px;
+      max-height: 92vh; overflow: hidden; display: flex; flex-direction: column;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      animation: ncvIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes ncvIn {
+      from { opacity:0; transform: scale(0.95) translateY(10px); }
+      to   { opacity:1; transform: scale(1) translateY(0); }
+    }
+    #navCvModal .ncv-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 24px; border-bottom: 1px solid #e8e8ed;
+    }
+    #navCvModal .ncv-title { font-size: 1rem; font-weight: 600; color: #1d1d1f; }
+    #navCvModal .ncv-close {
+      width: 30px; height: 30px; border-radius: 50%; background: #f5f5f7;
+      border: none; cursor: pointer; font-size: 1rem; display: flex;
+      align-items: center; justify-content: center; color: #424245;
+      transition: background 0.2s; font-family: inherit;
+    }
+    #navCvModal .ncv-close:hover { background: #d2d2d7; }
+    #navCvModal iframe { width: 100%; height: 78vh; border: none; display: block; }
+  </style>
+  <div id="navCvModal" onclick="closeNavCv()">
+    <div class="ncv-box" onclick="event.stopPropagation()">
+      <div class="ncv-header">
+        <span class="ncv-title">CV &mdash; Titouan MURE</span>
+        <button class="ncv-close" onclick="closeNavCv()">&#10005;</button>
+      </div>
+      <iframe src="../../images/cv.pdf" title="CV Titouan MURE"></iframe>
+    </div>
+  </div>
+  <script>
+    function openCvFromNav() {
+      document.getElementById('navCvModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNavCv() {
+      document.getElementById('navCvModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNavCv();
+    });
+  </script>
+
+  <!-- POPUP CONTACT NAV -->
+  <style>
+    #navContactOverlay {
+      display: none; position: fixed; inset: 0; z-index: 9998;
+      background: rgba(0,0,0,0.45); backdrop-filter: blur(8px);
+      align-items: center; justify-content: center;
+    }
+    #navContactOverlay.open { display: flex; }
+    #navContactOverlay .ncp-box {
+      background: #fff; border-radius: 20px; padding: 32px 28px 24px;
+      width: 100%; max-width: 360px; position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      animation: ncpIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes ncpIn {
+      from { opacity:0; transform:scale(0.92) translateY(12px); }
+      to   { opacity:1; transform:scale(1) translateY(0); }
+    }
+    #navContactOverlay .ncp-close {
+      position: absolute; top: 14px; right: 14px;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: #f5f5f7; border: none; cursor: pointer;
+      font-size: 0.9rem; display: flex; align-items: center;
+      justify-content: center; color: #424245; font-family: inherit;
+    }
+    #navContactOverlay .ncp-close:hover { background: #d2d2d7; }
+    #navContactOverlay .ncp-title {
+      font-size: 18px; font-weight: 700; color: #1d1d1f;
+      margin-bottom: 6px; letter-spacing: -0.3px;
+    }
+    #navContactOverlay .ncp-sub {
+      font-size: 13px; color: #6e6e73; margin-bottom: 24px;
+    }
+    #navContactOverlay .ncp-item {
+      display: flex; align-items: center; gap: 16px;
+      padding: 14px 16px; border-radius: 14px;
+      text-decoration: none; color: #1d1d1f;
+      border: 1px solid #e8e8ed; background: #fbfbfd;
+      margin-bottom: 10px; transition: all 0.2s;
+    }
+    #navContactOverlay .ncp-item:last-child { margin-bottom: 0; }
+    #navContactOverlay .ncp-item:hover {
+      background: #e8f0fe; border-color: rgba(0,113,227,0.3);
+      transform: translateY(-2px); box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    #navContactOverlay .ncp-icon {
+      width: 40px; height: 40px; border-radius: 12px;
+      background: #e8f0fe; color: #0071e3;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    #navContactOverlay .ncp-label {
+      font-size: 14px; font-weight: 600; color: #1d1d1f;
+    }
+    #navContactOverlay .ncp-val {
+      font-size: 12px; color: #6e6e73; margin-top: 2px;
+    }
+  </style>
+  <div id="navContactOverlay" onclick="closeNavContact()">
+    <div class="ncp-box" onclick="event.stopPropagation()">
+      <button class="ncp-close" onclick="closeNavContact()">&#10005;</button>
+      <div class="ncp-title">Me contacter</div>
+      <div class="ncp-sub">Choisissez comment vous souhaitez me joindre</div>
+      <a href="mailto:mure.titouan@gmail.com" class="ncp-item" onclick="closeNavContact()">
+        <div class="ncp-icon">&#128231;</div>
+        <div>
+          <div class="ncp-label">Email</div>
+          <div class="ncp-val">mure.titouan@gmail.com</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/titouan-mure-adminsys/" target="_blank" class="ncp-item" onclick="closeNavContact()">
+        <div class="ncp-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#0071e3"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+        <div>
+          <div class="ncp-label">LinkedIn</div>
+          <div class="ncp-val">Titouan Mure</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <script>
+    function openNavContact() {
+      document.getElementById('navContactOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNavContact() {
+      document.getElementById('navContactOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { closeNavContact(); closeNavCv(); }
+    });
+  </script>
+
+</body>
+</html>

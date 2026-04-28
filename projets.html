@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projets — Titouan MURE</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <button class="nav-logo-photo" onclick="openCvModal()" title="Voir mon CV">
+      <img src="images/photo.jpg" alt="Titouan MURE" class="nav-avatar" />
+      <span class="nav-avatar-name">Titouan MURE</span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projets.html" class="active">Projets</a></li>
+      <li><button class="nav-cta" onclick="toggleContactPopup(event)">Contact</button></li>
+    </ul>
+  </nav>
+
+  <!-- POPUP CONTACT -->
+  <div class="contact-popup-overlay" id="contactOverlay" onclick="closeContactPopup()">
+    <div class="contact-popup" id="contactPopup" onclick="event.stopPropagation()">
+      <button class="contact-popup-close" onclick="closeContactPopup()">✕</button>
+      <div class="contact-popup-title">Me contacter</div>
+      <div class="contact-popup-sub">Choisissez comment vous souhaitez me joindre</div>
+      <a href="mailto:mure.titouan@gmail.com" class="contact-popup-item" onclick="closeContactPopup()">
+        <div class="cp-icon">📧</div>
+        <div>
+          <div class="cp-label">Email</div>
+          <div class="cp-val">mure.titouan@gmail.com</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/titouan-mure-adminsys/" target="_blank" class="contact-popup-item" onclick="closeContactPopup()">
+        <div class="cp-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+        <div>
+          <div class="cp-label">LinkedIn</div>
+          <div class="cp-val">Titouan MURE</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function toggleContactPopup(e) {
+      e.stopPropagation();
+      const overlay = document.getElementById('contactOverlay');
+      overlay.classList.toggle('open');
+    }
+    function closeContactPopup() {
+      document.getElementById('contactOverlay')?.classList.remove('open');
+    }
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closeContactPopup(); });
+  </script>
+
+  <!-- MODAL CV -->
+  <div class="modal-overlay" id="cvModal" onclick="closeCvModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <span class="modal-title">CV — Titouan MURE</span>
+        <button class="modal-close" onclick="closeCvModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <iframe src="images/cv.pdf" title="CV Titouan MURE"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openCvModal() {
+      document.getElementById('cvModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeCvModal() {
+      document.getElementById('cvModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closeCvModal(); });
+  </script>
+
+  <!-- HERO PROJETS -->
+  <section class="projets-hero">
+    <div class="projets-hero-inner">
+      <div class="hero-tag reveal">Portfolio technique</div>
+      <h1 class="reveal">Mes <span>Projets</span></h1>
+      <p class="projets-lead reveal">Stages, projets académiques et réalisations techniques — chaque projet reflète une compétence acquise sur le terrain.</p>
+    </div>
+  </section>
+
+  <!-- FILTRES -->
+  <div class="filters-bar reveal">
+    <div class="filters-inner">
+      <button class="filter-btn active" onclick="filterProjects('all', this)">Tous</button>
+      <button class="filter-btn" onclick="filterProjects('reseau', this)">Réseau</button>
+      <button class="filter-btn" onclick="filterProjects('systeme', this)">Système</button>
+      <button class="filter-btn" onclick="filterProjects('scripting', this)">Scripting</button>
+    </div>
+  </div>
+
+  <!-- GRILLE PROJETS -->
+  <main class="projets-main">
+    <div class="projets-grid">
+
+      <!-- 1. ZABBIX — Stage 2026 -->
+      <a href="projets/zabbix/zabbix.html" class="project-card reveal" data-tags="reseau systeme scripting">
+        <div class="project-card-img zabbix-bg">
+          <div class="project-card-img-inner">
+            <img src="projets/zabbix/images/Carte_Colleges_Globale.webp" alt="Zabbix carte globale" />
+          </div>
+          <div class="project-card-badge">Stage · Fév–Juin 2026</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-tag">Supervision réseau</div>
+          <h3>Supervision &amp; Administration réseau — CD42</h3>
+          <p>Déploiement de Zabbix 7.0 pour superviser 50 collèges, 700+ switches et 200+ serveurs. Automatisation complète via scripts Bash/Python et API REST.</p>
+          <div class="project-card-chips">
+            <span class="chip blue">Zabbix 7.0</span>
+            <span class="chip">Bash</span>
+            <span class="chip">Python</span>
+            <span class="chip">API REST</span>
+            <span class="chip">SNMP</span>
+          </div>
+          <div class="project-card-footer">
+            <span class="project-card-link">Voir le projet <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="project-card-date">Fév – Juin 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 2. OPTIMISATION INFRA — SAE S6 2025-2026 -->
+      <a href="projets/optimisation_infra/optimisation-infra.html" class="project-card reveal reveal-delay-1" data-tags="reseau systeme">
+        <div class="project-card-img oi-bg">
+          <div class="oi-card-preview">
+            <div class="oi-preview-title">Optimisation Services</div>
+            <div class="oi-preview-schema">
+              <div class="oi-p-zone lan">🏢 LAN<br/><small>AD · DNS · GPO</small></div>
+              <div class="oi-p-arrow">⟷🔥⟷</div>
+              <div class="oi-p-zone dmz">🌐 DMZ<br/><small>Web · Aloha</small></div>
+            </div>
+            <div class="oi-preview-tools">dcdiag · repadmin · nslookup · gpresult</div>
+          </div>
+          <div class="project-card-badge oi-badge">SAE S6 · 2025–2026</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-tag" style="color:#d97706;">AD / DNS / GPO · Suite SAE S5</div>
+          <h3>Optimisation Infrastructure — AD, DNS, LAN/DMZ</h3>
+          <p>Fiabilisation AD, DNS intégré, 4 GPO de sécurité, DNS Relay Unbound et sécurisation LAN/DMZ. Validation par dcdiag, repadmin et gpresult.</p>
+          <div class="project-card-chips">
+            <span class="chip" style="background:#fefce8;color:#d97706;">Windows Server</span>
+            <span class="chip blue">AD DS</span>
+            <span class="chip">DNS</span>
+            <span class="chip">GPO</span>
+            <span class="chip" style="background:#fef2f2;color:#dc2626;">Cybersécurité</span>
+          </div>
+          <div class="project-card-footer">
+            <span class="project-card-link" style="color:#d97706;">Voir le projet <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="project-card-date">BUT 3ème année S6</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 3. ACTIVE DIRECTORY — SAE S5 2025-2026 -->
+      <a href="projets/active-directory/active-directory.html" class="project-card reveal reveal-delay-2" data-tags="systeme reseau">
+        <div class="project-card-img ad-bg">
+          <div class="ad-card-inner">
+            <div class="ad-card-icon">🏢</div>
+            <div class="ad-card-title">Active Directory</div>
+          </div>
+          <div class="project-card-badge">SAE S5 · 2025–2026</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-tag" style="color:#0078d4;">Administration système</div>
+          <h3>Active Directory — Mise en place &amp; redondance</h3>
+          <p>Déploiement d'une infrastructure AD redondante sous Windows Server avec GPO de sécurité, politique de mots de passe et surveillance des journaux d'événements.</p>
+          <div class="project-card-chips">
+            <span class="chip" style="background:#eff6ff;color:#0078d4;">Windows Server</span>
+            <span class="chip">GPO</span>
+            <span class="chip">DNS</span>
+            <span class="chip" style="background:#fef2f2;color:#dc2626;">Cybersécurité</span>
+          </div>
+          <div class="project-card-footer">
+            <span class="project-card-link" style="color:#0078d4;">Voir le projet <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="project-card-date">BUT S5 · 2025–2026</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 4. INFRA SÉCURISÉE — SAE S4 2024-2025 -->
+      <a href="projets/infra_securise/infra-securise.html" class="project-card reveal" data-tags="reseau systeme">
+        <div class="project-card-img is-bg">
+          <div class="is-card-inner">
+            <div class="is-card-schema">
+              <div class="is-schema-row"><span class="is-node fw">🔥 Pare-feu ACL</span></div>
+              <div class="is-schema-arrow">↓</div>
+              <div class="is-schema-row"><span class="is-node sw">⚡ VLANs Cisco</span></div>
+              <div class="is-schema-arrow">↓</div>
+              <div class="is-schema-vms">
+                <span class="is-node db">🗄️ BDD<br/><small>TLS</small></span>
+                <span class="is-node web">🌐 Web</span>
+                <span class="is-node admin">🔍 Pentest</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card-badge is-badge">SAE S4 · 2024–2025</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-tag" style="color:#ef4444;">Infrastructure · Cybersécurité</div>
+          <h3>Infrastructure Virtualisée &amp; Sécurisée</h3>
+          <p>Déploiement sur Proxmox, sécurisation MySQL/TLS, VLANs Cisco + ACL et tests d'intrusion avec Nmap et Gobuster.</p>
+          <div class="project-card-chips">
+            <span class="chip" style="background:#fef2f2;color:#dc2626;">Pentest</span>
+            <span class="chip blue">Proxmox</span>
+            <span class="chip">TLS</span>
+            <span class="chip">VLANs</span>
+            <span class="chip">Nmap</span>
+          </div>
+          <div class="project-card-footer">
+            <span class="project-card-link" style="color:#ef4444;">Voir le projet <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="project-card-date">BUT 2ème année S4</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 5. FITPICK — SAE S3 2024-2025 -->
+      <a href="projets/fitpick/fitpick.html" class="project-card reveal reveal-delay-1" data-tags="scripting systeme">
+        <div class="project-card-img fitpick-bg">
+          <div class="fp-card-inner">
+            <div class="fp-card-icon">👕</div>
+            <div class="fp-card-title">FitPick</div>
+          </div>
+          <div class="project-card-badge">SAE S3 · 2024–2025</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-tag" style="color:#059669;">Application full-stack</div>
+          <h3>FitPick — Recommandations vestimentaires intelligentes</h3>
+          <p>Application web React + Spring Boot générant des tenues adaptées selon la météo. Évaluée meilleure réalisation de l'année — 1er de promotion.</p>
+          <div class="project-card-chips">
+            <span class="chip" style="background:#ecfdf5;color:#059669;">Spring Boot</span>
+            <span class="chip blue">React</span>
+            <span class="chip">Docker</span>
+            <span class="chip">JWT</span>
+            <span class="chip">CI/CD</span>
+          </div>
+          <div class="project-card-footer">
+            <span class="project-card-link" style="color:#059669;">Voir le projet <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="project-card-date">🏆 1er de promo</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 6. MINI JEUX — SAE S1 2023-2024 -->
+      <a href="projets/mini-jeux/mini-jeux.html" class="project-card reveal reveal-delay-2" data-tags="scripting">
+        <div class="project-card-img mj-bg">
+          <div class="mj-card-inner">
+            <div class="mj-terminal-preview">
+              <span style="color:#8b949e;">[mure5u@iutm]$</span> <span style="color:#58a6ff;">./appli</span><br/>
+              <span style="color:#f0883e;">1.</span> La suite mystère<br/>
+              <span style="color:#f0883e;">2.</span> Le nombre caché<br/>
+              <span style="color:#f0883e;">3.</span> Mastermind<br/>
+              <span style="color:#8b949e;">Choisissez :</span> <span style="animation:blink 1s step-end infinite;color:#58a6ff;">█</span>
+            </div>
+          </div>
+          <div class="project-card-badge mj-badge">SAE S1 · 2023–2024</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-tag" style="color:#58a6ff;">Programmation C</div>
+          <h3>Mini Jeux — Programme interactif en C</h3>
+          <p>Trois jeux en ligne de commande développés en C : Suite Mystère, Nombre Caché et Mastermind. Premier projet de programmation from scratch.</p>
+          <div class="project-card-chips">
+            <span class="chip" style="background:#0d1117;color:#58a6ff;border:1px solid #30363d;">Langage C</span>
+            <span class="chip">gcc</span>
+            <span class="chip">Algorithmique</span>
+            <span class="chip">CLI</span>
+          </div>
+          <div class="project-card-footer">
+            <span class="project-card-link" style="color:#58a6ff;">Voir le projet <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="project-card-date">BUT 1ère année S1</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 7. MEMORYX — SAE S1 2023-2024 -->
+      <a href="projets/memoryx/memoryx.html" class="project-card reveal" data-tags="scripting">
+        <div class="project-card-img mx-bg">
+          <div class="mx-card-inner">
+            <div class="mx-terminal-preview">
+              <span style="color:#3fb950;">Bravo ! Paire trouvée !</span><br/>
+              <span style="color:#8b949e;">Score :</span><br/>
+              <span style="color:#58a6ff;">titouan : 1 pts</span><br/>
+              <span style="color:#c9d1d9;">X &nbsp; X &nbsp; - &nbsp; X &nbsp; X</span><br/>
+              <span style="color:#3fb950;">titouan, c'est à vous !</span>
+            </div>
+          </div>
+          <div class="project-card-badge mx-badge">SAE S1 · 2023–2024</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-tag" style="color:#3fb950;">Programmation C · Collaboratif</div>
+          <h3>Memoryx — Jeu de Memory avec bot IA</h3>
+          <p>Jeu de Memory en C supportant jusqu'à 4 joueurs et un bot intelligent. Tableau de dimensions variables, gestion multi-joueurs et mémoire dynamique.</p>
+          <div class="project-card-chips">
+            <span class="chip" style="background:#0d1117;color:#3fb950;border:1px solid #30363d;">Langage C</span>
+            <span class="chip">Bot IA</span>
+            <span class="chip">malloc</span>
+            <span class="chip">Collaboratif</span>
+          </div>
+          <div class="project-card-footer">
+            <span class="project-card-link" style="color:#3fb950;">Voir le projet <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="project-card-date">BUT 1ère année S1</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 8. SAUVEGARDE AUTOMATIQUE — SAE S1 2023-2024 -->
+      <a href="projets/backup_script/backup-script.html" class="project-card reveal reveal-delay-1" data-tags="scripting reseau">
+        <div class="project-card-img bs-bg">
+          <div class="bs-card-preview">
+            <div class="bs-preview-terminal">
+              <span style="color:#8b949e;">$ </span><span style="color:#f0883e;">./backup.sh</span><br/>
+              <span style="color:#3fb950;">########## 100%</span><br/>
+              <span style="color:#3fb950;">Sauvegarde effectuée</span><br/>
+              <span style="color:#e3b341;">cron déjà configuré ✓</span>
+            </div>
+          </div>
+          <div class="project-card-badge bs-badge">SAE S1 · 2023–2024</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-tag" style="color:#f0883e;">Scripting Bash · Cybersécurité</div>
+          <h3>Sauvegarde Automatique — Script Bash + crontab</h3>
+          <p>Script shell automatisant la sauvegarde quotidienne, avec logs horodatés, rapport HTML généré et planification crontab — première approche DevOps.</p>
+          <div class="project-card-chips">
+            <span class="chip" style="background:#161b22;color:#f0883e;border:1px solid #30363d;">Bash</span>
+            <span class="chip">crontab</span>
+            <span class="chip">tar</span>
+            <span class="chip" style="background:#fef2f2;color:#dc2626;">Logs & traçabilité</span>
+          </div>
+          <div class="project-card-footer">
+            <span class="project-card-link" style="color:#f0883e;">Voir le projet <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="project-card-date">BUT 1ère année S1</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 9. BDD ENTREPRISE — SAE S1 2023-2024 -->
+      <a href="projets/bdd_entreprise/bdd-entreprise.html" class="project-card reveal reveal-delay-2" data-tags="systeme scripting">
+        <div class="project-card-img bdd-bg">
+          <div class="bdd-card-inner">
+            <div class="bdd-card-icon">🗄️</div>
+            <div class="bdd-card-title">BDD Entreprise</div>
+            <div class="bdd-card-sub">EA → Relationnel → SQL</div>
+          </div>
+          <div class="project-card-badge bdd-badge">SAE S1 · 2023–2024</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-tag" style="color:#7c3aed;">Base de données · SQL</div>
+          <h3>BDD Entreprise de Distribution — Merise + MySQL</h3>
+          <p>Conception complète d'une BDD : schéma EA, graphe de dépendances, dictionnaire de données, modèle relationnel et 5 requêtes SQL complexes.</p>
+          <div class="project-card-chips">
+            <span class="chip" style="background:#f5f3ff;color:#7c3aed;">MySQL</span>
+            <span class="chip">Merise</span>
+            <span class="chip">SQL avancé</span>
+            <span class="chip">Schéma EA</span>
+          </div>
+          <div class="project-card-footer">
+            <span class="project-card-link" style="color:#7c3aed;">Voir le projet <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="project-card-date">BUT 1ère année · Solo</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-name">Titouan MURE</div>
+      <div class="footer-sub">BUT Informatique DACS · IUT de Metz · Promo 2023–2026</div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="https://www.linkedin.com/in/titouan-mure-adminsys/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function toggleContactPopup(e) {
+      e.stopPropagation();
+      const popup = document.getElementById('contactPopup');
+      const overlay = document.getElementById('contactOverlay');
+      const isOpen = popup.classList.contains('open');
+      if (isOpen) {
+        closeContactPopup();
+      } else {
+        popup.classList.add('open');
+        overlay.classList.add('open');
+      }
+    }
+    function closeContactPopup() {
+      document.getElementById('contactPopup').classList.remove('open');
+      document.getElementById('contactOverlay').classList.remove('open');
+    }
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closeContactPopup(); });
+    document.addEventListener('click', () => closeContactPopup());
+
+    function filterProjects(tag, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.project-card').forEach(card => {
+        const tags = card.dataset.tags || '';
+        if (tag === 'all' || tags.includes(tag)) {
+          card.style.display = '';
+          setTimeout(() => card.style.opacity = '1', 10);
+        } else {
+          card.style.opacity = '0';
+          setTimeout(() => card.style.display = 'none', 300);
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

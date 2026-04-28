@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Optimisation Infrastructure — Titouan MURE</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <button class="nav-logo-photo" onclick="openCvFromNav()" title="Voir mon CV"><img src="../../images/photo.jpg" alt="Titouan MURE" class="nav-avatar" /><span class="nav-avatar-name">Titouan MURE</span></button>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Accueil</a></li>
+      <li><a href="../../projets.html" class="active">Projets</a></li>
+      <li><button class="nav-cta" onclick="openNavContact()">Contact</button></li>
+    </ul>
+  </nav>
+
+  <!-- BACK -->
+  <div class="back-bar">
+    <div class="back-inner">
+      <a href="../../projets.html" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        Retour aux projets
+      </a>
+      <span class="back-breadcrumb">Projets / Optimisation Infrastructure</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="project-hero oi-hero">
+    <div class="oi-hero-bg"></div>
+    <div class="project-hero-inner">
+      <div class="project-hero-text">
+        <div class="project-tag-row">
+          <span class="project-chip oi-chip">SAE 6 · BUT 3ème année S6</span>
+          <span class="project-chip oi-chip-cont">Suite de la SAE S5 AD</span>
+          <span class="project-chip blue">Fév. 2026</span>
+        </div>
+        <h1>Optimisation<br><span>des Services d'Infrastructure</span></h1>
+        <p class="project-lead">Continuité directe de la SAE S5 — passage d'une infrastructure Active Directory opérationnelle à une architecture maîtrisée, cohérente et sécurisée : optimisation AD, fiabilisation DNS, sécurisation LAN/DMZ et DNS Relay.</p>
+        <div class="oi-quote">
+          <span class="oi-quote-mark">"</span>
+          De l'infrastructure simulée à une architecture exploitable
+          <span class="oi-quote-mark">"</span>
+        </div>
+        <div class="project-stats-row">
+          <div class="pstat"><div class="pstat-num oi-num">2</div><div class="pstat-label">DC redondants</div></div>
+          <div class="pstat"><div class="pstat-num oi-num">AD</div><div class="pstat-label">+ DNS + GPO</div></div>
+          <div class="pstat"><div class="pstat-num oi-num">DMZ</div><div class="pstat-label">LAN sécurisé</div></div>
+          <div class="pstat"><div class="pstat-num">👥</div><div class="pstat-label">Titouan · Guillaume · Tom</div></div>
+        </div>
+      </div>
+      <div class="project-hero-visual">
+        <img src="images/schema_reseau.png" alt="Schéma réseau LAN/DMZ" class="oi-hero-img" onclick="openLightbox('images/schema_reseau.png','Architecture LAN / DMZ — Infrastructure simulée')" />
+        <div class="project-hero-caption">Architecture LAN interne / DMZ exposée</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEXTE -->
+  <section class="pblock">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Contexte</div>
+      <h2 class="section-title reveal">La continuité de la SAE S5</h2>
+      <div class="context-2col reveal">
+        <div class="context-txt">
+          <p>Cette SAE 6 <strong>prolonge directement le travail réalisé en SAE S5</strong> sur l'Active Directory. L'objectif n'était plus seulement d'obtenir un domaine opérationnel, mais de le rendre <strong>cohérent, maintenable et sûr</strong> — comme on l'attendrait dans un contexte professionnel.</p>
+          <p>L'infrastructure est segmentée entre un <strong>LAN interne</strong> (contrôleurs de domaine AD, postes clients) et une <strong>DMZ exposée</strong> (serveurs web, load balancer Aloha), filtrés par un pare-feu inter-zones. Mon périmètre dans cette SAE s'est concentré sur la partie AD/DNS côté LAN.</p>
+          <p>La démarche était la suivante : <strong>vérifier, appliquer, tester, documenter</strong>. Chaque modification a été validée par des tests concrets (nslookup, dcdiag, repadmin, gpresult) avant de passer à l'étape suivante.</p>
+        </div>
+        <div class="context-infos">
+          <div class="info-item"><span class="info-label">SAE</span><span class="info-val">SAE 6 — BUT 3ème année S6</span></div>
+          <div class="info-item"><span class="info-label">Date</span><span class="info-val">16 Février 2026</span></div>
+          <div class="info-item"><span class="info-label">Équipe</span><span class="info-val">Titouan · Guillaume · Tom</span></div>
+          <div class="info-item"><span class="info-label">Mon périmètre</span><span class="info-val">AD DS / DNS / GPO / LAN</span></div>
+          <div class="info-item"><span class="info-label">Suite de</span><span class="info-val">SAE S5 — Active Directory</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AXE 1 : AD + DNS -->
+  <section class="pblock pblock-alt">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Axe 1</div>
+      <h2 class="section-title reveal">Optimisation Active Directory &amp; DNS</h2>
+      <p class="section-desc reveal">Fiabilisation de l'annuaire, cohérence DNS et application maîtrisée des stratégies de groupe.</p>
+
+      <div class="oi-grid">
+
+        <div class="oi-card reveal" onclick="openLightbox('images/ad_user.png','Structuration annuaire — 02_Users / 03_Computers')">
+          <div class="oi-card-img"><img src="images/ad_user.png" alt="Structuration AD" /><div class="oi-zoom">🔍</div></div>
+          <div class="oi-card-body">
+            <div class="oi-card-num">01</div>
+            <h3>Structuration de l'annuaire</h3>
+            <p>Organisation en OU dédiées : <code>02_Users</code> pour les comptes utilisateurs et <code>03_Computers</code> pour les postes clients. Cette structure garantit un ciblage propre des GPO et une administration maintenable, proche des pratiques professionnelles.</p>
+            <div class="real-chips"><span class="chip blue">OU dédiées</span><span class="chip">Users / Computers</span><span class="chip">Ciblage GPO</span></div>
+          </div>
+        </div>
+
+        <div class="oi-card reveal reveal-delay-1" onclick="openLightbox('images/dns_manager.png','Gestionnaire DNS — Zone ttg.local avec enregistrements SRV')">
+          <div class="oi-card-img"><img src="images/dns_manager.png" alt="DNS Manager" /><div class="oi-zoom">🔍</div></div>
+          <div class="oi-card-body">
+            <div class="oi-card-num">02</div>
+            <h3>Validation DNS — Zone directe</h3>
+            <p>Vérification de la zone <code>ttg.local</code> : enregistrements A des DC (SRV-AD1 / SRV-AD2), enregistrements NS, et dossiers critiques <code>_msdcs</code>, <code>_tcp</code>, <code>_udp</code>. Ces enregistrements SRV permettent aux clients de localiser les services LDAP/Kerberos du domaine.</p>
+            <div class="real-chips"><span class="chip blue">Zone directe</span><span class="chip">Enregistrements A / NS / SRV</span><span class="chip">ttg.local</span></div>
+          </div>
+        </div>
+
+        <div class="oi-card reveal reveal-delay-2" onclick="openLightbox('images/reverse_dns.png','Zone inverse — PTR 10.30.120.x')">
+          <div class="oi-card-img"><img src="images/reverse_dns.png" alt="Zone inverse DNS" /><div class="oi-zoom">🔍</div></div>
+          <div class="oi-card-body">
+            <div class="oi-card-num">03</div>
+            <h3>Zone DNS inverse &amp; tests nslookup</h3>
+            <p>Configuration de la zone inverse <code>120.30.10.in-addr.arpa</code> avec enregistrements PTR pour SRV-AD1 (10.30.120.10) et SRV-AD2 (10.30.120.11). Tests <code>nslookup</code> validés dans les deux sens. Mise à jour dynamique sécurisée uniquement.</p>
+            <div class="real-chips"><span class="chip blue">Zone inverse</span><span class="chip">PTR</span><span class="chip">nslookup</span><span class="chip oi-chip-cyber">Sécurisé uniquement</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AXE 2 : GPO -->
+  <section class="pblock">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Axe 2</div>
+      <h2 class="section-title reveal">Politiques de sécurité — GPO</h2>
+      <p class="section-desc reveal">Quatre GPO déployées pour durcir l'environnement utilisateur et machine.</p>
+      <div class="gpo-grid">
+
+        <div class="gpo-card reveal" onclick="openLightbox('images/gpo.png','GPO — Default Domain Policy')">
+          <div class="gpo-card-img"><img src="images/gpo.png" alt="GPO" /><div class="oi-zoom">🔍</div></div>
+          <div class="gpo-info">
+            <div class="gpo-tag user-tag">GPO Utilisateur</div>
+            <h3>Écran de veille sécurisé</h3>
+            <p>Verrouillage automatique après <strong>300 secondes</strong> d'inactivité avec protection par mot de passe obligatoire. Appliqué via GPO utilisateur liée à <code>02_Users</code>.</p>
+            <div class="real-chips"><span class="chip blue">Screensaver</span><span class="chip">300s</span><span class="chip oi-chip-cyber">Lock obligatoire</span></div>
+          </div>
+        </div>
+
+        <div class="gpo-card reveal reveal-delay-1" onclick="openLightbox('images/gpo_screensaver.png','GPO Screensaver — 300 secondes')">
+          <div class="gpo-card-img"><img src="images/gpo_screensaver.png" alt="GPO screensaver" /><div class="oi-zoom">🔍</div></div>
+          <div class="gpo-info">
+            <div class="gpo-tag user-tag">GPO Utilisateur</div>
+            <h3>Restriction Panneau de configuration</h3>
+            <p>Interdiction d'accès au Panneau de configuration et à l'app Paramètres. Garantit un environnement poste <strong>stable et non modifiable</strong> par l'utilisateur.</p>
+            <div class="real-chips"><span class="chip blue">Panneau config</span><span class="chip">Restriction système</span></div>
+          </div>
+        </div>
+
+        <div class="gpo-card reveal reveal-delay-2" onclick="openLightbox('images/gpo_logon.png','GPO Logon — Bannière de connexion')">
+          <div class="gpo-card-img"><img src="images/gpo_logon.png" alt="GPO logon" /><div class="oi-zoom">🔍</div></div>
+          <div class="gpo-info">
+            <div class="gpo-tag machine-tag">GPO Ordinateur</div>
+            <h3>Bannière de connexion</h3>
+            <p>Affichage avant authentification : <em>"Accès réservé — Domaine TTG. Toute tentative non autorisée peut être surveillée."</em> Appliqué via GPO ordinateur liée à <code>03_Computers</code>.</p>
+            <div class="real-chips"><span class="chip blue">Bannière logon</span><span class="chip oi-chip-cyber">Conformité</span><span class="chip">03_Computers</span></div>
+          </div>
+        </div>
+
+        <div class="gpo-card reveal" onclick="openLightbox('images/gpo_lockout.png','GPO Account Lockout — 5 tentatives / 10 minutes')">
+          <div class="gpo-card-img"><img src="images/gpo_lockout.png" alt="GPO lockout" /><div class="oi-zoom">🔍</div></div>
+          <div class="gpo-info">
+            <div class="gpo-tag domain-tag">GPO Domaine</div>
+            <h3>Politique de mot de passe &amp; verrouillage</h3>
+            <p>Longueur min. <strong>8 caractères</strong>, complexité activée, durée max. <strong>90 jours</strong>, historique <strong>24 mots de passe</strong>. Verrouillage après <strong>5 tentatives</strong> — durée <strong>10 min</strong>, réinitialisation du compteur à 10 min.</p>
+            <div class="real-chips"><span class="chip blue">Password Policy</span><span class="chip oi-chip-cyber">Anti-bruteforce</span><span class="chip">Account Lockout</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AXE 3 : LAN/DMZ -->
+  <section class="pblock pblock-alt">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Axe 3</div>
+      <h2 class="section-title reveal">Sécurisation LAN / DMZ &amp; DNS Relay</h2>
+      <div class="landmz-grid">
+
+        <div class="landmz-block reveal">
+          <div class="landmz-visual" onclick="openLightbox('images/dns_relay.png','DNS Relay Unbound — VM Linux 10.20.20.20')">
+            <img src="images/dns_relay.png" alt="DNS Relay" />
+            <div class="oi-zoom">🔍</div>
+          </div>
+          <div class="landmz-info">
+            <div class="landmz-badge">DNS Relay — DMZ Backend</div>
+            <h3>DNS Relay avec Unbound</h3>
+            <p>VM Linux dédiée (<code>10.20.20.20</code>) hébergeant <strong>Unbound</strong> en tant que DNS forwarder. Séparation DNS interne / externe — les clients LAN ne peuvent pas accéder directement à Internet. Seuls AD1 et AD2 sont autorisés à interroger le relay (UDP/TCP 53).</p>
+            <div class="oi-flux">
+              <div class="flux-item"><span class="flux-arrow">→</span><span>AD1 / AD2 → DNS Relay (port 53)</span></div>
+              <div class="flux-item"><span class="flux-arrow">→</span><span>DNS Relay → Internet (port 53)</span></div>
+              <div class="flux-item flux-blocked"><span class="flux-arrow red">✕</span><span>Clients → DNS public (bloqué)</span></div>
+            </div>
+            <div class="real-chips"><span class="chip blue">Unbound</span><span class="chip">DNS Forwarder</span><span class="chip oi-chip-cyber">Moindre privilège</span></div>
+          </div>
+        </div>
+
+        <div class="landmz-block reveal">
+          <div class="landmz-visual" onclick="openLightbox('images/test_aloha.png','Test accès Aloha — Load Balancer DMZ')">
+            <img src="images/test_aloha.png" alt="Test Aloha" />
+            <div class="oi-zoom">🔍</div>
+          </div>
+          <div class="landmz-info">
+            <div class="landmz-badge">LAN ↔ DMZ</div>
+            <h3>Filtrage inter-zones &amp; validation des flux</h3>
+            <p>Séparation stricte LAN / DMZ — isolation des services exposés, réduction de la surface d'attaque. Politique de filtrage firewall : autorisation <strong>uniquement des flux nécessaires</strong>, blocage par défaut des communications inter-zones. Tests de connectivité validés (LAN → DMZ / DMZ → LAN).</p>
+            <div class="oi-flux">
+              <div class="flux-item"><span class="flux-arrow green">✓</span><span>LAN → DMZ (flux autorisés validés)</span></div>
+              <div class="flux-item"><span class="flux-arrow green">✓</span><span>Accès Aloha load balancer confirmé</span></div>
+              <div class="flux-item flux-blocked"><span class="flux-arrow red">✕</span><span>Flux non autorisés — bloqués</span></div>
+            </div>
+            <div class="real-chips"><span class="chip blue">Firewall inter-zones</span><span class="chip">Aloha LB</span><span class="chip oi-chip-cyber">Moindre privilège</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VALIDATION -->
+  <section class="pblock">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Validation</div>
+      <h2 class="section-title reveal">Vérification de l'infrastructure</h2>
+      <p class="section-desc reveal">Un domaine ne doit pas seulement "fonctionner" — il doit être prouvé stable.</p>
+      <div class="validation-grid reveal">
+
+        <div class="val-card" onclick="openLightbox('images/test_dns.png','Tests nslookup — Résolution directe et inverse validée')">
+          <div class="val-card-img"><img src="images/test_dns.png" alt="Test DNS" /><div class="oi-zoom">🔍</div></div>
+          <div class="val-body">
+            <h3>Tests nslookup — DNS</h3>
+            <p>Résolution directe (nom → IP) et inverse (IP → nom) validée pour SRV-AD1 et SRV-AD2. Serveur DNS utilisé : DNS interne du domaine (<code>127.0.0.1</code>).</p>
+          </div>
+        </div>
+
+        <div class="val-card">
+          <div class="val-card-placeholder">
+            <div class="val-tool">dcdiag</div>
+            <div class="val-tool-sub">Santé AD</div>
+          </div>
+          <div class="val-body">
+            <h3>dcdiag — Santé du domaine</h3>
+            <p>Batterie de tests sur le contrôleur de domaine et ses dépendances (DNS, services AD, intégrité des composants). Absence d'erreur bloquante confirmée.</p>
+          </div>
+        </div>
+
+        <div class="val-card">
+          <div class="val-card-placeholder">
+            <div class="val-tool">repadmin</div>
+            <div class="val-tool-sub">Réplication</div>
+          </div>
+          <div class="val-body">
+            <h3>repadmin — Réplication AD</h3>
+            <p>Confirmation de la réplication entre SRV-AD1 et SRV-AD2. Absence d'échec de réplication — les objets, stratégies et mises à jour se propagent correctement.</p>
+          </div>
+        </div>
+
+        <div class="val-card">
+          <div class="val-card-placeholder">
+            <div class="val-tool">gpresult</div>
+            <div class="val-tool-sub">GPO</div>
+          </div>
+          <div class="val-body">
+            <h3>gpresult — Application des GPO</h3>
+            <p>Vérification des GPO effectivement appliquées à la session utilisateur et à la machine. Export HTML du rapport GPO archivé comme livrable documentaire.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFICULTÉS -->
+  <section class="pblock pblock-alt">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Difficultés</div>
+      <h2 class="section-title reveal">Problèmes rencontrés &amp; solutions</h2>
+      <div class="diff-grid reveal">
+        <div class="diff-card problem">
+          <div class="diff-icon">⚠️</div>
+          <h3>GPO non appliquées</h3>
+          <p>Certains effets attendus n'étaient pas visibles côté client.</p>
+          <div class="diff-arrow">→</div>
+          <div class="diff-solution">Mauvais ciblage — objet dans le mauvais conteneur AD. Déplacé dans l'OU correcte, comportement cohérent.</div>
+        </div>
+        <div class="diff-card problem">
+          <div class="diff-icon">⚠️</div>
+          <h3>Réplication AD instable</h3>
+          <p>Erreurs initiales de synchronisation inter-DC.</p>
+          <div class="diff-arrow">→</div>
+          <div class="diff-solution">Diagnostic par couche (AD → DNS → réseau). Analyse des logs et correction progressive. Stabilisation complète.</div>
+        </div>
+        <div class="diff-card problem">
+          <div class="diff-icon">⚠️</div>
+          <h3>DNS incohérent</h3>
+          <p>Résolution directe OK, zone inverse absente.</p>
+          <div class="diff-arrow">→</div>
+          <div class="diff-solution">Création de la zone inverse + enregistrements PTR. Tests nslookup validés dans les deux sens.</div>
+        </div>
+        <div class="diff-card problem">
+          <div class="diff-icon">⚠️</div>
+          <h3>Flux LAN/DMZ bloqués</h3>
+          <p>Flux autorisés mais non fonctionnels côté pare-feu.</p>
+          <div class="diff-arrow">→</div>
+          <div class="diff-solution">Vérification cohérence routage + règles firewall. Correction des règles et validation des flux attendus.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="pblock">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Technologies</div>
+      <h2 class="section-title reveal">Stack utilisée</h2>
+      <div class="stack-grid reveal">
+        <div class="stack-item"><div class="stack-icon">🏢</div><div class="stack-name">AD DS</div><div class="stack-type">Annuaire</div></div>
+        <div class="stack-item"><div class="stack-icon">🌐</div><div class="stack-name">DNS</div><div class="stack-type">Résolution</div></div>
+        <div class="stack-item"><div class="stack-icon">📋</div><div class="stack-name">GPO</div><div class="stack-type">Politique</div></div>
+        <div class="stack-item"><div class="stack-icon">🪟</div><div class="stack-name">Windows Server</div><div class="stack-type">OS</div></div>
+        <div class="stack-item"><div class="stack-icon">🔍</div><div class="stack-name">Unbound</div><div class="stack-type">DNS Relay</div></div>
+        <div class="stack-item"><div class="stack-icon">🔥</div><div class="stack-name">Pare-feu</div><div class="stack-type">Filtrage</div></div>
+        <div class="stack-item"><div class="stack-icon">⚖️</div><div class="stack-name">Aloha LB</div><div class="stack-type">Load Balancer</div></div>
+        <div class="stack-item"><div class="stack-icon">🐧</div><div class="stack-name">Linux</div><div class="stack-type">VM DNS Relay</div></div>
+        <div class="stack-item"><div class="stack-icon">🔑</div><div class="stack-name">Kerberos</div><div class="stack-type">Auth</div></div>
+        <div class="stack-item"><div class="stack-icon">🛠️</div><div class="stack-name">dcdiag / repadmin</div><div class="stack-type">Diagnostic</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-name">Titouan MURE</div>
+      <div class="footer-sub">BUT Informatique DACS · IUT de Metz · Promo 2023–2026</div>
+      <div class="footer-links">
+        <a href="../../index.html">Accueil</a>
+        <a href="../../projets.html">Projets</a>
+        <a href="https://www.linkedin.com/in/titouan-mure-adminsys/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" />
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <script src="../../js/main.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- MODAL CV NAV -->
+  <style>
+    #navCvModal {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(10px);
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    #navCvModal.open { display: flex; }
+    #navCvModal .ncv-box {
+      background: #fff; border-radius: 20px; width: 100%; max-width: 820px;
+      max-height: 92vh; overflow: hidden; display: flex; flex-direction: column;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      animation: ncvIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes ncvIn {
+      from { opacity:0; transform: scale(0.95) translateY(10px); }
+      to   { opacity:1; transform: scale(1) translateY(0); }
+    }
+    #navCvModal .ncv-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 24px; border-bottom: 1px solid #e8e8ed;
+    }
+    #navCvModal .ncv-title { font-size: 1rem; font-weight: 600; color: #1d1d1f; }
+    #navCvModal .ncv-close {
+      width: 30px; height: 30px; border-radius: 50%; background: #f5f5f7;
+      border: none; cursor: pointer; font-size: 1rem; display: flex;
+      align-items: center; justify-content: center; color: #424245;
+      transition: background 0.2s; font-family: inherit;
+    }
+    #navCvModal .ncv-close:hover { background: #d2d2d7; }
+    #navCvModal iframe { width: 100%; height: 78vh; border: none; display: block; }
+  </style>
+  <div id="navCvModal" onclick="closeNavCv()">
+    <div class="ncv-box" onclick="event.stopPropagation()">
+      <div class="ncv-header">
+        <span class="ncv-title">CV &mdash; Titouan MURE</span>
+        <button class="ncv-close" onclick="closeNavCv()">&#10005;</button>
+      </div>
+      <iframe src="../../images/cv.pdf" title="CV Titouan MURE"></iframe>
+    </div>
+  </div>
+  <script>
+    function openCvFromNav() {
+      document.getElementById('navCvModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNavCv() {
+      document.getElementById('navCvModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNavCv();
+    });
+  </script>
+
+  <!-- POPUP CONTACT NAV -->
+  <style>
+    #navContactOverlay {
+      display: none; position: fixed; inset: 0; z-index: 9998;
+      background: rgba(0,0,0,0.45); backdrop-filter: blur(8px);
+      align-items: center; justify-content: center;
+    }
+    #navContactOverlay.open { display: flex; }
+    #navContactOverlay .ncp-box {
+      background: #fff; border-radius: 20px; padding: 32px 28px 24px;
+      width: 100%; max-width: 360px; position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      animation: ncpIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes ncpIn {
+      from { opacity:0; transform:scale(0.92) translateY(12px); }
+      to   { opacity:1; transform:scale(1) translateY(0); }
+    }
+    #navContactOverlay .ncp-close {
+      position: absolute; top: 14px; right: 14px;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: #f5f5f7; border: none; cursor: pointer;
+      font-size: 0.9rem; display: flex; align-items: center;
+      justify-content: center; color: #424245; font-family: inherit;
+    }
+    #navContactOverlay .ncp-close:hover { background: #d2d2d7; }
+    #navContactOverlay .ncp-title {
+      font-size: 18px; font-weight: 700; color: #1d1d1f;
+      margin-bottom: 6px; letter-spacing: -0.3px;
+    }
+    #navContactOverlay .ncp-sub {
+      font-size: 13px; color: #6e6e73; margin-bottom: 24px;
+    }
+    #navContactOverlay .ncp-item {
+      display: flex; align-items: center; gap: 16px;
+      padding: 14px 16px; border-radius: 14px;
+      text-decoration: none; color: #1d1d1f;
+      border: 1px solid #e8e8ed; background: #fbfbfd;
+      margin-bottom: 10px; transition: all 0.2s;
+    }
+    #navContactOverlay .ncp-item:last-child { margin-bottom: 0; }
+    #navContactOverlay .ncp-item:hover {
+      background: #e8f0fe; border-color: rgba(0,113,227,0.3);
+      transform: translateY(-2px); box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    #navContactOverlay .ncp-icon {
+      width: 40px; height: 40px; border-radius: 12px;
+      background: #e8f0fe; color: #0071e3;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    #navContactOverlay .ncp-label {
+      font-size: 14px; font-weight: 600; color: #1d1d1f;
+    }
+    #navContactOverlay .ncp-val {
+      font-size: 12px; color: #6e6e73; margin-top: 2px;
+    }
+  </style>
+  <div id="navContactOverlay" onclick="closeNavContact()">
+    <div class="ncp-box" onclick="event.stopPropagation()">
+      <button class="ncp-close" onclick="closeNavContact()">&#10005;</button>
+      <div class="ncp-title">Me contacter</div>
+      <div class="ncp-sub">Choisissez comment vous souhaitez me joindre</div>
+      <a href="mailto:mure.titouan@gmail.com" class="ncp-item" onclick="closeNavContact()">
+        <div class="ncp-icon">&#128231;</div>
+        <div>
+          <div class="ncp-label">Email</div>
+          <div class="ncp-val">mure.titouan@gmail.com</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/titouan-mure-adminsys/" target="_blank" class="ncp-item" onclick="closeNavContact()">
+        <div class="ncp-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#0071e3"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+        <div>
+          <div class="ncp-label">LinkedIn</div>
+          <div class="ncp-val">Titouan Mure</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <script>
+    function openNavContact() {
+      document.getElementById('navContactOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNavContact() {
+      document.getElementById('navContactOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { closeNavContact(); closeNavCv(); }
+    });
+  </script>
+
+</body>
+</html>
