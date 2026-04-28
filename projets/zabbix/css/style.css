@@ -143,11 +143,13 @@
   border: 1px solid var(--border-light);
   background: #000;
   position: relative;
-  aspect-ratio: 16 / 9;
+  width: 100%;
+  padding-top: 56.25%;
 }
 .video-wrap iframe {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: none;
