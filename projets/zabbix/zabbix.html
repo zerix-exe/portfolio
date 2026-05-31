@@ -268,36 +268,36 @@
 
       </div>
 
-      <div class="ssl-explainer reveal" style="margin-top:24px;">
-        <div class="ssl-exp-title">🔐 Comment fonctionne le certificat TLS ?</div>
-        <p style="font-size:13px;color:var(--text-3);line-height:1.65;margin-bottom:18px;">TLS (Transport Layer Security) est le protocole qui chiffre les communications entre un navigateur et un serveur. Il garantit que les données échangées ne peuvent pas être interceptées ni modifiées. Concrètement, il repose sur un certificat numérique qui authentifie le serveur et établit un canal de communication sécurisé — c'est ce qui affiche le cadenas dans la barre d'adresse.</p>
-        <div class="ssl-exp-grid">
-          <div class="ssl-exp-item">
-            <div class="ssl-exp-icon">📄</div>
+      <div style="margin-top:24px; background:linear-gradient(135deg,#f0f6ff 0%,#fbfbfd 100%); border:1px solid rgba(0,113,227,0.18); border-radius:16px; padding:28px 32px;">
+        <div style="font-size:1rem; font-weight:700; color:#1d1d1f; margin-bottom:12px;">🔐 Comment fonctionne le certificat TLS ?</div>
+        <p style="font-size:13px; color:#6e6e73; line-height:1.7; margin-bottom:20px;">TLS (Transport Layer Security) est le protocole qui chiffre les communications entre un navigateur et un serveur. Il garantit que les données échangées ne peuvent pas être interceptées ni modifiées. Concrètement, il repose sur un certificat numérique qui authentifie le serveur et établit un canal de communication sécurisé — c'est ce qui affiche le cadenas dans la barre d'adresse.</p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div style="display:flex; align-items:flex-start; gap:12px; background:#fff; border:1px solid #e8e8ed; border-radius:12px; padding:14px 16px;">
+            <div style="font-size:1.3rem; flex-shrink:0; margin-top:2px;">📄</div>
             <div>
-              <div class="ssl-exp-label">Clé publique</div>
-              <div class="ssl-exp-desc">Présentée au navigateur pour prouver l'identité du serveur</div>
+              <div style="font-size:13px; font-weight:600; color:#1d1d1f; margin-bottom:3px;">Clé publique</div>
+              <div style="font-size:12px; color:#6e6e73; line-height:1.5;">Présentée au navigateur pour prouver l'identité du serveur</div>
             </div>
           </div>
-          <div class="ssl-exp-item">
-            <div class="ssl-exp-icon">🔑</div>
+          <div style="display:flex; align-items:flex-start; gap:12px; background:#fff; border:1px solid #e8e8ed; border-radius:12px; padding:14px 16px;">
+            <div style="font-size:1.3rem; flex-shrink:0; margin-top:2px;">🔑</div>
             <div>
-              <div class="ssl-exp-label">Clé privée</div>
-              <div class="ssl-exp-desc">Gardée secrète sur le serveur pour chiffrer les échanges</div>
+              <div style="font-size:13px; font-weight:600; color:#1d1d1f; margin-bottom:3px;">Clé privée</div>
+              <div style="font-size:12px; color:#6e6e73; line-height:1.5;">Gardée secrète sur le serveur pour chiffrer les échanges</div>
             </div>
           </div>
-          <div class="ssl-exp-item">
-            <div class="ssl-exp-icon">📦</div>
+          <div style="display:flex; align-items:flex-start; gap:12px; background:#fff; border:1px solid #e8e8ed; border-radius:12px; padding:14px 16px;">
+            <div style="font-size:1.3rem; flex-shrink:0; margin-top:2px;">📦</div>
             <div>
-              <div class="ssl-exp-label">Certificat</div>
-              <div class="ssl-exp-desc">Contient la clé publique et la chaîne de certification jusqu'à l'autorité racine</div>
+              <div style="font-size:13px; font-weight:600; color:#1d1d1f; margin-bottom:3px;">Certificat</div>
+              <div style="font-size:12px; color:#6e6e73; line-height:1.5;">Contient la clé publique et la chaîne de certification jusqu'à l'autorité racine</div>
             </div>
           </div>
-          <div class="ssl-exp-item">
-            <div class="ssl-exp-icon">🌐</div>
+          <div style="display:flex; align-items:flex-start; gap:12px; background:#fff; border:1px solid #e8e8ed; border-radius:12px; padding:14px 16px;">
+            <div style="font-size:1.3rem; flex-shrink:0; margin-top:2px;">🌐</div>
             <div>
-              <div class="ssl-exp-label">VirtualHost Apache</div>
-              <div class="ssl-exp-desc">Définit comment le serveur répond sur un nom de domaine précis en HTTPS</div>
+              <div style="font-size:13px; font-weight:600; color:#1d1d1f; margin-bottom:3px;">VirtualHost Apache</div>
+              <div style="font-size:12px; color:#6e6e73; line-height:1.5;">Définit comment le serveur répond sur un nom de domaine précis en HTTPS</div>
             </div>
           </div>
         </div>
