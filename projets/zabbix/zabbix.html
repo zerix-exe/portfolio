@@ -228,6 +228,83 @@
     </div>
   </section>
 
+  <!-- HTTPS / SSL -->
+  <section class="pblock">
+    <div class="pblock-inner">
+      <div class="section-label reveal">Sécurisation</div>
+      <h2 class="section-title reveal">Mise en place HTTPS &amp; SSL</h2>
+      <p class="section-desc reveal">Sécurisation de l'interface Zabbix via HTTPS avec un certificat auto-signé : configuration Apache, activation du module SSL, génération du certificat et connexion chiffrée au serveur.</p>
+      <div class="gallery-grid reveal">
+
+        <div class="gallery-item" onclick="openLightbox('images/apache_ssl_enable.png', 'Activation du module SSL Apache')">
+          <img src="images/apache_ssl_enable.png" alt="Apache SSL enable" />
+          <div class="gallery-caption">Activation du module SSL Apache</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/config_apache_ssl.png', 'Configuration Apache SSL — VirtualHost HTTPS')">
+          <img src="images/config_apache_ssl.png" alt="Configuration Apache SSL" />
+          <div class="gallery-caption">Configuration VirtualHost HTTPS</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/https_install_certif.png', 'Génération du certificat SSL auto-signé')">
+          <img src="images/https_install_certif.png" alt="Installation certificat HTTPS" />
+          <div class="gallery-caption">Génération du certificat auto-signé</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/certificat.png', 'Détails du certificat SSL')">
+          <img src="images/certificat.png" alt="Certificat SSL" />
+          <div class="gallery-caption">Détails du certificat SSL</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/activation_ssl.png', 'Activation SSL finale')">
+          <img src="images/activation_ssl.png" alt="Activation SSL" />
+          <div class="gallery-caption">Activation SSL — site activé</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/connexion_zabbix_ssl.png', 'Connexion HTTPS sécurisée à Zabbix')">
+          <img src="images/connexion_zabbix_ssl.png" alt="Connexion Zabbix SSL" />
+          <div class="gallery-caption">Connexion HTTPS à l'interface Zabbix</div>
+        </div>
+
+        <div class="ssl-explainer reveal">
+          <div class="ssl-exp-title">🔐 Comment fonctionne le certificat TLS ?</div>
+          <p style="font-size:13px;color:var(--text-3);line-height:1.65;margin-bottom:18px;">TLS (Transport Layer Security) est le protocole qui chiffre les communications entre un navigateur et un serveur. Il garantit que les données échangées ne peuvent pas être interceptées ni modifiées. Concrètement, il repose sur un certificat numérique qui authentifie le serveur et établit un canal de communication sécurisé — c'est ce qui affiche le cadenas dans la barre d'adresse.</p>
+          <div class="ssl-exp-grid">
+            <div class="ssl-exp-item">
+              <div class="ssl-exp-icon">📄</div>
+              <div>
+                <div class="ssl-exp-label">Clé publique</div>
+                <div class="ssl-exp-desc">Présentée au navigateur pour prouver l'identité du serveur</div>
+              </div>
+            </div>
+            <div class="ssl-exp-item">
+              <div class="ssl-exp-icon">🔑</div>
+              <div>
+                <div class="ssl-exp-label">Clé privée</div>
+                <div class="ssl-exp-desc">Gardée secrète sur le serveur pour chiffrer les échanges</div>
+              </div>
+            </div>
+            <div class="ssl-exp-item">
+              <div class="ssl-exp-icon">📦</div>
+              <div>
+                <div class="ssl-exp-label">Certificat</div>
+                <div class="ssl-exp-desc">Contient la clé publique et la chaîne de certification jusqu'à l'autorité racine</div>
+              </div>
+            </div>
+            <div class="ssl-exp-item">
+              <div class="ssl-exp-icon">🌐</div>
+              <div>
+                <div class="ssl-exp-label">VirtualHost Apache</div>
+                <div class="ssl-exp-desc">Définit comment le serveur répond sur un nom de domaine précis en HTTPS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- STACK -->
   <section class="pblock">
     <div class="pblock-inner">
@@ -251,7 +328,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-name">Titouan MURÉ</div>
+      <div class="footer-name">Titouan MURE</div>
       <div class="footer-sub">BUT Informatique DACS · IUT de Metz · Promo 2023–2026</div>
       <div class="footer-links">
         <a href="../../index.html">Accueil</a>

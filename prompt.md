@@ -22,13 +22,22 @@
 
 ---
 
+## HÉBERGEMENT
+
+- **GitHub** : https://github.com/zerix-exe/portfolio
+- **Site en ligne** : https://zerix-exe.github.io/portfolio
+- GitHub Pages sur branche `main` — tout commit déclenche un redéploiement automatique
+- Git LFS activé pour les vidéos MP4
+
+---
+
 ## STRUCTURE DU PORTFOLIO
 
 ```
 portfolio/
 ├── index.html                  <- Page d'accueil
 ├── projets.html                <- Galerie des projets
-├── CONTINUITY.md               <- Ce fichier
+├── prompt.md                   <- Ce fichier
 ├── css/
 │   ├── style.css               <- CSS global Apple-inspired
 │   └── index.css               <- CSS spécifique index.html
@@ -38,7 +47,7 @@ portfolio/
 ├── images/
 │   ├── photo.jpg               <- Photo de Titouan
 │   ├── cv.pdf                  <- CV
-│   └── lettre-motivation.pdf   <- Lettre de motivation
+│   └── lettre-motivation.pdf
 └── projets/
     ├── zabbix/                 <- Stage CD42 · Fév–Juin 2026
     ├── optimisation-infra/     <- SAE S6 · 2025–2026
@@ -73,11 +82,11 @@ Chaque dossier projet contient :
 
 ## RÈGLES DE CODAGE
 
-1. CSS toujours dans `css/style.css` (jamais inline sauf exceptions autonomes)
-2. Fichiers CSS nommés `style.css`, fichiers JS nommés `main.js`
-3. Ne jamais donner de ZIP — toujours les fichiers individuels
-4. Toujours préciser où placer chaque fichier
-5. Les pages projet sont à 2 niveaux de profondeur (`../../`) pour remonter à la racine
+1. CSS toujours dans `css/style.css` — fichiers CSS nommés `style.css`, JS nommés `main.js`
+2. Ne jamais donner de ZIP — toujours les fichiers individuels
+3. Toujours préciser où placer chaque fichier
+4. Les pages projet sont à 2 niveaux de profondeur (`../../`) pour remonter à la racine
+5. Ne jamais mettre MURÉ — toujours MURE
 
 ---
 
@@ -106,9 +115,8 @@ Chaque dossier projet contient :
 </nav>
 ```
 
-### Les deux blocs autonomes à inclure avant `</body>` sur chaque page projet :
+### Popup CV autonome (avant `</body>`) :
 
-**1. Popup CV** (`openCvFromNav()` / `closeNavCv()`) :
 ```html
 <!-- MODAL CV NAV -->
 <style>
@@ -162,7 +170,8 @@ Chaque dossier projet contient :
 </script>
 ```
 
-**2. Popup Contact** (`openNavContact()` / `closeNavContact()`) :
+### Popup Contact autonome (avant `</body>`) :
+
 ```html
 <!-- POPUP CONTACT NAV -->
 <style>
@@ -193,20 +202,15 @@ Chaque dossier projet contient :
   #navContactOverlay .ncp-title { font-size: 18px; font-weight: 700; color: #1d1d1f; margin-bottom: 6px; }
   #navContactOverlay .ncp-sub { font-size: 13px; color: #6e6e73; margin-bottom: 24px; }
   #navContactOverlay .ncp-item {
-    display: flex; align-items: center; gap: 16px;
-    padding: 14px 16px; border-radius: 14px; text-decoration: none;
-    color: #1d1d1f; border: 1px solid #e8e8ed; background: #fbfbfd;
-    margin-bottom: 10px; transition: all 0.2s;
+    display: flex; align-items: center; gap: 16px; padding: 14px 16px;
+    border-radius: 14px; text-decoration: none; color: #1d1d1f;
+    border: 1px solid #e8e8ed; background: #fbfbfd; margin-bottom: 10px; transition: all 0.2s;
   }
   #navContactOverlay .ncp-item:last-child { margin-bottom: 0; }
-  #navContactOverlay .ncp-item:hover {
-    background: #e8f0fe; border-color: rgba(0,113,227,0.3);
-    transform: translateY(-2px);
-  }
+  #navContactOverlay .ncp-item:hover { background: #e8f0fe; border-color: rgba(0,113,227,0.3); transform: translateY(-2px); }
   #navContactOverlay .ncp-icon {
-    width: 40px; height: 40px; border-radius: 12px;
-    background: #e8f0fe; color: #0071e3;
-    display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+    width: 40px; height: 40px; border-radius: 12px; background: #e8f0fe;
+    color: #0071e3; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;
   }
   #navContactOverlay .ncp-label { font-size: 14px; font-weight: 600; color: #1d1d1f; }
   #navContactOverlay .ncp-val { font-size: 12px; color: #6e6e73; margin-top: 2px; }
@@ -218,17 +222,11 @@ Chaque dossier projet contient :
     <div class="ncp-sub">Choisissez comment vous souhaitez me joindre</div>
     <a href="mailto:mure.titouan@gmail.com" class="ncp-item" onclick="closeNavContact()">
       <div class="ncp-icon">📧</div>
-      <div>
-        <div class="ncp-label">Email</div>
-        <div class="ncp-val">mure.titouan@gmail.com</div>
-      </div>
+      <div><div class="ncp-label">Email</div><div class="ncp-val">mure.titouan@gmail.com</div></div>
     </a>
     <a href="https://www.linkedin.com/in/titouan-mure-adminsys/" target="_blank" class="ncp-item" onclick="closeNavContact()">
       <div class="ncp-icon">in</div>
-      <div>
-        <div class="ncp-label">LinkedIn</div>
-        <div class="ncp-val">titouan-mure-adminsys</div>
-      </div>
+      <div><div class="ncp-label">LinkedIn</div><div class="ncp-val">titouan-mure-adminsys</div></div>
     </a>
   </div>
 </div>
@@ -246,6 +244,15 @@ Chaque dossier projet contient :
   });
 </script>
 ```
+
+---
+
+## VIDÉO ZABBIX
+
+- Fichier local : `presenttion-zabbix.mp4` (dans `projets/zabbix/images/`)
+- Lien YouTube non répertorié : https://youtu.be/btEZZxApqbE
+- Intégrée via `<iframe src="https://www.youtube.com/embed/btEZZxApqbE">`
+- CSS : `.video-wrap` avec `aspect-ratio: 16/9` et iframe `position: absolute`
 
 ---
 
@@ -268,20 +275,29 @@ Chaque dossier projet contient :
 ## POUR AJOUTER UN NOUVEAU PROJET
 
 1. Créer `portfolio/projets/[nom-projet]/` avec `[nom-projet].html`, `css/style.css`, `js/main.js`, `images/`
-2. Utiliser le **nav standard** ci-dessus (adapter les chemins `../../` si nécessaire)
+2. Utiliser le **nav standard** ci-dessus
 3. Inclure les **deux blocs popup autonomes** (CV + Contact) avant `</body>`
-4. Ajouter la **carte du projet** dans `projets.html` en respectant l'ordre chronologique
-5. Ajouter une **carte aperçu** dans la section "Mes réalisations" de `index.html`
+4. Ajouter la **carte** dans `projets.html` en respectant l'ordre chronologique
+5. Ajouter une **carte aperçu** dans `index.html` section "Mes réalisations"
 6. Mettre à jour `css/style.css` global pour le style de la nouvelle carte
+7. Commit : `git add . && git commit -m "✨ feat: ajout projet [nom]" && git push origin main`
 
 ---
 
-## HÉBERGEMENT
+## COMMITS GITMOJI
 
-Le portfolio est hébergé sur **Render.com** (plan gratuit).
-- Repo GitHub : `zerix-exe/portfolio` (à vérifier)
-- Lien : `https://[nom].onrender.com`
-- Tout commit sur la branche `main` déclenche un redéploiement automatique
+| Emoji | Usage |
+|-------|-------|
+| 🎉 | Premier commit |
+| ✨ | Nouveau projet / fonctionnalité |
+| 🐛 | Correction bug |
+| 💄 | Modification CSS/design |
+| 📝 | Documentation |
+| 🗑️ | Suppression fichiers |
+| 🔧 | Configuration |
+| 🖼️ | Ajout images/assets |
+| 🎥 | Vidéo |
+| 🚀 | Déploiement |
 
 ---
 
