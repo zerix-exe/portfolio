@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certifications — Titouan MURE</title>
+<meta name="description" content="Certifications et badges de Titouan MURE — Microsoft Learn, Cisco Networking Academy, Fortinet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#2563eb;--blue-dark:#1d4ed8;--blue-light:#60a5fa;
+    --ink:#0f172a;--ink-soft:#1e293b;--gray:#64748b;--gray-light:#94a3b8;
+    --bg:#fbfcfe;--card:#ffffff;--border:#e5e7eb;--border-soft:#eef1f6;
+    --green:#16a34a;--green-bg:#dcfce7;
+    --shadow-sm:0 1px 2px rgba(15,23,42,.04),0 1px 3px rgba(15,23,42,.06);
+    --shadow-lg:0 20px 40px -12px rgba(15,23,42,.16);
+    --radius:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.5;
+    -webkit-font-smoothing:antialiased;min-height:100vh;position:relative;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;top:-20%;right:-10%;width:60vw;height:60vw;
+    background:radial-gradient(circle at center,rgba(96,165,250,.16),transparent 60%);
+    z-index:0;pointer-events:none;
+  }
+  a{text-decoration:none;color:inherit}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:100;background:rgba(251,252,254,.8);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border-soft);}
+  .nav-inner{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:16px;letter-spacing:-.01em}
+  .brand .avatar{width:34px;height:34px;border-radius:50%;
+    background:linear-gradient(135deg,var(--blue),var(--blue-light));
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:800;box-shadow:var(--shadow-sm);}
+  .nav-links{display:flex;align-items:center;gap:8px}
+  .nav-links a{color:var(--gray);font-size:14px;font-weight:500;padding:8px 12px;border-radius:8px;transition:.15s}
+  .nav-links a:hover{color:var(--ink);background:rgba(37,99,235,.06)}
+  .nav-links a.active{color:var(--blue);font-weight:600}
+  .btn-contact{background:var(--blue);color:#fff!important;padding:9px 18px!important;border-radius:999px;font-weight:600;box-shadow:var(--shadow-sm);transition:.15s}
+  .btn-contact:hover{background:var(--blue-dark)!important}
+  @media(max-width:640px){.nav-links a:not(.btn-contact){display:none}}
+
+  /* HEADER */
+  header.page-head{position:relative;z-index:1;padding:72px 0 40px;text-align:center}
+  .pill-badge{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);color:var(--green);
+    font-size:13px;font-weight:600;padding:7px 16px;border-radius:999px;margin-bottom:26px}
+  .pill-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+  header.page-head h1{font-size:clamp(38px,6vw,58px);font-weight:900;letter-spacing:-.03em;line-height:1.05}
+  header.page-head h1 .grad{background:linear-gradient(120deg,var(--blue),var(--blue-light));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  header.page-head p{max-width:640px;margin:20px auto 0;color:var(--gray);font-size:17px;line-height:1.6}
+  .stats{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .stat{background:var(--card);border:1px solid var(--border-soft);border-radius:14px;padding:16px 26px;box-shadow:var(--shadow-sm);min-width:120px}
+  .stat .num{font-size:26px;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+  .stat .lbl{font-size:12.5px;color:var(--gray);font-weight:500;margin-top:2px}
+
+  /* FILTERS */
+  .filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;margin:48px 0 32px}
+  .filter{background:var(--card);border:1px solid var(--border);color:var(--ink-soft);font-size:14px;font-weight:600;
+    padding:9px 20px;border-radius:999px;cursor:pointer;transition:.15s;font-family:inherit}
+  .filter:hover{border-color:var(--blue);color:var(--blue)}
+  .filter.active{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:var(--shadow-sm)}
+
+  /* GRID */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px;position:relative;z-index:1;padding-bottom:80px}
+  .card{background:var(--card);border:1px solid var(--border-soft);border-radius:var(--radius);overflow:hidden;
+    box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .card-banner{position:relative;height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#fff}
+  .card-banner::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.14),transparent 55%)}
+  .card-banner .issuer-ico{width:50px;height:50px;position:relative;z-index:1;filter:drop-shadow(0 4px 8px rgba(0,0,0,.22))}
+  .card-banner .issuer-name{font-size:19px;font-weight:800;letter-spacing:-.01em;position:relative;z-index:1;text-shadow:0 1px 3px rgba(0,0,0,.18)}
+  .card-banner .level{position:absolute;top:14px;right:14px;z-index:2;background:rgba(255,255,255,.92);color:var(--ink);
+    font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:999px;backdrop-filter:blur(4px)}
+  .card-body{padding:22px 22px 18px;display:flex;flex-direction:column;flex:1}
+  .card-cat{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+  .card-title{font-size:17px;font-weight:800;letter-spacing:-.01em;line-height:1.28;color:var(--ink)}
+  .card-desc{color:var(--gray);font-size:13.5px;line-height:1.55;margin-top:10px;flex:1}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+  .tag{font-size:12px;font-weight:600;padding:5px 11px;border-radius:8px;background:rgba(37,99,235,.08);color:var(--blue)}
+  .card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding-top:16px;border-top:1px solid var(--border-soft)}
+  .verify{display:inline-flex;align-items:center;gap:6px;color:var(--blue);font-size:14px;font-weight:700;transition:.15s}
+  .verify:hover{gap:9px}
+  .verified{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-size:13.5px;font-weight:700}
+  .card-date{font-size:13px;color:var(--gray);font-weight:500}
+
+  footer{border-top:1px solid var(--border-soft);position:relative;z-index:1;padding:34px 0;text-align:center;color:var(--gray);font-size:14px}
+</style>
+</head>
+<body id="top">
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="brand"><span class="avatar">TM</span><span>Titouan MURE</span></a>
+    <div class="nav-links">
+      <a href="#top" class="active">Certifications</a>
+      <!-- Remplace # par ton email (mailto:) ou LinkedIn quand tu veux -->
+      <a href="#" class="btn-contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="container">
+    <span class="pill-badge"><span class="dot"></span>Formation continue · Badges vérifiables</span>
+    <h1>Mes <span class="grad">Certifications</span></h1>
+    <p>Badges, modules et parcours obtenus auprès de Microsoft Learn, Cisco Networking Academy et Fortinet — chacun attestant d'une compétence en réseau, systèmes et cybersécurité.</p>
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<footer>
+  <div class="container">© <span id="year"></span> Titouan MURE · Administrateur Systèmes &amp; Réseaux</div>
+</footer>
+
+<script>
+/* ============================================================
+   AJOUTER / MODIFIER UNE CERTIFICATION
+   ------------------------------------------------------------
+   Un objet = une carte. Champs :
+     issuer    -> organisme, sert aussi de filtre ("Microsoft","Cisco","Fortinet")
+     title     -> intitulé
+     category  -> petite étiquette au-dessus du titre (majuscules auto)
+     desc      -> courte description
+     level     -> pastille en haut à droite ("Module","Parcours","CCNA"...)
+     date      -> date affichée en bas (laisse "" si aucune)
+     tags      -> ["Réseau","IP",...]
+     verifyUrl -> lien de vérification (laisse "" -> affiche "✓ Vérifié")
+     color     -> [optionnel] dégradé bannière ["#hex","#hex"] (sinon couleur de l'organisme)
+   ============================================================ */
+
+const certifications = [
+  /* ---------- MICROSOFT LEARN ---------- */
+  { issuer:"Microsoft", title:"Introduction à PowerShell", category:"Scripting · PowerShell", level:"Module", date:"17 janv. 2026",
+    desc:"Bases de PowerShell : cmdlets, pipeline, variables et exécution de scripts pour automatiser l'administration.",
+    tags:["PowerShell","Scripting","Automatisation"],
+    verifyUrl:"https://learn.microsoft.com/fr-fr/users/titouanmure-6151/achievements/print/elhdlknp" },
+
+  { issuer:"Microsoft", title:"Décrire les outils d'administration de Windows Server", category:"Windows Server", level:"Module", date:"17 janv. 2026",
+    desc:"Panorama des outils d'administration de Windows Server : consoles, RSAT et Windows Admin Center.",
+    tags:["Windows Server","Administration"],
+    verifyUrl:"https://learn.microsoft.com/fr-fr/users/titouanmure-6151/achievements/print/cym8adb9" },
+
+  { issuer:"Microsoft", title:"Gérer les connexions persistantes avec les sessions PowerShell", category:"Scripting · PowerShell", level:"Module", date:"18 janv. 2026",
+    desc:"Utilisation des sessions PowerShell persistantes pour administrer des machines distantes de façon fiable.",
+    tags:["PowerShell","Remoting","Sessions"],
+    verifyUrl:"https://learn.microsoft.com/fr-fr/users/titouanmure-6151/achievements/print/zd6paz72" },
+
+  { issuer:"Microsoft", title:"Sécurité, conformité et identité — mise en route", category:"Sécurité & Conformité", level:"Module", date:"18 janv. 2026",
+    desc:"Introduction aux principes de la sécurité, de la conformité et de la gestion des identités.",
+    tags:["Sécurité","Conformité","Identité"],
+    verifyUrl:"https://learn.microsoft.com/fr-fr/users/titouanmure-6151/achievements/print/wvb7akmn" },
+
+  { issuer:"Microsoft", title:"Comprendre Microsoft Entra ID", category:"Identité · Entra", level:"Module", date:"16 sept. 2026",
+    desc:"Rôle et fonctionnement de Microsoft Entra ID pour la gestion des identités et des accès.",
+    tags:["Microsoft Entra","Identité","Azure AD"],
+    verifyUrl:"https://learn.microsoft.com/fr-fr/users/titouanmure-6151/achievements/print/egr44m9p" },
+
+  { issuer:"Microsoft", title:"Créer, configurer et gérer des identités", category:"Identité · Entra", level:"Module", date:"16 sept. 2026",
+    desc:"Création et gestion des utilisateurs et groupes dans Microsoft Entra.",
+    tags:["Identité","Utilisateurs","Groupes"],
+    verifyUrl:"https://learn.microsoft.com/fr-fr/users/titouanmure-6151/achievements/print/crdumbf9" },
+
+  { issuer:"Microsoft", title:"Réinitialisation de mot de passe en libre-service (SSPR)", category:"Identité · Entra", level:"Module", date:"16 sept. 2026",
+    desc:"Mise en place du SSPR Microsoft Entra pour autoriser les utilisateurs à réinitialiser leur mot de passe.",
+    tags:["SSPR","Entra","Sécurité"],
+    verifyUrl:"https://learn.microsoft.com/fr-fr/users/titouanmure-6151/achievements/print/y4u7ub5r" },
+
+  { issuer:"Microsoft", title:"Présentation d'Azure Cloud Shell", category:"Azure · Outils", level:"Module", date:"16 sept. 2026",
+    desc:"Utilisation d'Azure Cloud Shell pour administrer Azure en ligne de commande.",
+    tags:["Azure","Cloud Shell","CLI"],
+    verifyUrl:"https://learn.microsoft.com/fr-fr/users/titouanmure-6151/achievements/print/y49y9d5r" },
+
+  { issuer:"Microsoft", title:"Décrire les principaux composants architecturaux d'Azure", category:"Azure · Architecture", level:"Module", date:"16 sept. 2026",
+    desc:"Composants d'architecture Azure : régions, zones de disponibilité et groupes de ressources.",
+    tags:["Azure","Architecture","Cloud"],
+    verifyUrl:"https://learn.microsoft.com/fr-fr/users/titouanmure-6151/achievements/print/bu2j4kfd" },
+
+  { issuer:"Microsoft", title:"Déployer l'infrastructure Azure avec des modèles ARM JSON", category:"Azure · IaC", level:"Module", date:"16 sept. 2026",
+    desc:"Déploiement d'infrastructure Azure via des modèles ARM (Infrastructure as Code).",
+    tags:["Azure","ARM","IaC","JSON"],
+    verifyUrl:"https://learn.microsoft.com/fr-fr/users/titouanmure-6151/achievements/print/crduwpv9" },
+
+  { issuer:"Microsoft", title:"Azure Policy — Initiatives", category:"Azure · Gouvernance", level:"Module", date:"16 sept. 2026",
+    desc:"Regroupement de stratégies Azure Policy en initiatives pour la gouvernance et la conformité.",
+    tags:["Azure Policy","Gouvernance","Conformité"],
+    verifyUrl:"https://learn.microsoft.com/fr-fr/users/titouanmure-6151/achievements/print/fecrrc3x" },
+
+  { issuer:"Microsoft", title:"Sécuriser vos ressources Azure avec le RBAC (Azure RBAC)", category:"Azure · Sécurité", level:"Module", date:"16 sept. 2026",
+    desc:"Contrôle d'accès basé sur les rôles (RBAC) pour sécuriser les ressources Azure.",
+    tags:["Azure RBAC","Contrôle d'accès","Sécurité"],
+    verifyUrl:"https://learn.microsoft.com/fr-fr/users/titouanmure-6151/achievements/print/abh26pr7" },
+
+  /* ---------- MICROSOFT — PARCOURS / TROPHÉES AZ-104 ---------- */
+  { issuer:"Microsoft", title:"AZ-104 : Gérer les identités et la gouvernance dans Azure", category:"Parcours · AZ-104", level:"Parcours", date:"16 sept. 2026",
+    desc:"Parcours AZ-104 : gestion des identités, des accès, des abonnements et de la gouvernance Azure.",
+    tags:["AZ-104","Identité","Gouvernance"],
+    verifyUrl:"https://learn.microsoft.com/fr-fr/users/titouanmure-6151/achievements/print/wmgxgebn?tab=tab-learning-paths" },
+
+  { issuer:"Microsoft", title:"AZ-104 : Prérequis pour les administrateurs Azure", category:"Parcours · AZ-104", level:"Parcours", date:"16 sept. 2026",
+    desc:"Parcours AZ-104 : prérequis et fondamentaux du rôle d'administrateur Azure.",
+    tags:["AZ-104","Administration","Azure"],
+    verifyUrl:"https://learn.microsoft.com/fr-fr/users/titouanmure-6151/achievements/print/3zs8xbph?tab=tab-learning-paths" },
+
+  /* ---------- CISCO NETWORKING ACADEMY ---------- */
+  { issuer:"Cisco", title:"CCNA : Introduction to Networks", category:"Réseau", level:"CCNA", date:"",
+    desc:"Fondamentaux réseau : adressage IP, Ethernet, configuration de la connectivité entre commutateurs, routeurs et équipements terminaux. Jusqu'à 54 labs (Packet Tracer / matériel Cisco).",
+    tags:["Réseau","IP","Routage","Packet Tracer"], verifyUrl:"" },
+
+  { issuer:"Cisco", title:"CCNA : Switching, Routing & Wireless Essentials", category:"Réseau", level:"CCNA", date:"",
+    desc:"Commutation, configuration LAN filaire et sans-fil selon les bonnes pratiques de sécurité et les protocoles de redondance. Jusqu'à 45 activités et 21 h de labs.",
+    tags:["Commutation","Routage","Wi-Fi","Sécurité"], verifyUrl:"" },
+
+  { issuer:"Cisco", title:"CCNA : Enterprise Networking, Security & Automation", category:"Réseau", level:"CCNA", date:"",
+    desc:"Réseaux d'entreprise évolutifs : routage OSPF, sécurité réseau et listes de contrôle d'accès (ACL), technologies WAN, ainsi que l'automatisation et la programmabilité (REST API, Python, JSON).",
+    tags:["OSPF","ACL","WAN","Automatisation"], verifyUrl:"" },
+
+  { issuer:"Cisco", title:"Introduction to Cybersecurity", category:"Cybersécurité", level:"Débutant", date:"",
+    desc:"Notions d'introduction à la cybersécurité : impact global des cybermenaces, vulnérabilités, détection et défense.",
+    tags:["Cybersécurité","Vulnérabilités","Défense"], verifyUrl:"", color:["#5aa62f","#357a1a"] },
+
+  /* ---------- FORTINET ---------- */
+  { issuer:"Fortinet", title:"NSE 1 — Introduction to the Threat Landscape 3.0", category:"Cybersécurité", level:"NSE 1", date:"",
+    desc:"Compréhension fondamentale du paysage des cybermenaces : acteurs malveillants, types de menaces et principes de cybersécurité.",
+    tags:["Cybersécurité","Menaces","Fondamentaux"], verifyUrl:"" }
+];
+
+/* Couleurs / logo par organisme */
+const ISSUERS = {
+  "Microsoft":{ grad:["#2f6fed","#0f47b3"], ico:"microsoft" },
+  "Cisco"    :{ grad:["#0aa5d9","#036a91"], ico:"network" },
+  "Fortinet" :{ grad:["#e23b2e","#a81f16"], ico:"shield" },
+  "_default" :{ grad:["#334155","#0f172a"], ico:"award" }
+};
+
+const ICONS = {
+  microsoft:'<svg class="issuer-ico" viewBox="0 0 24 24"><rect x="2" y="2" width="9" height="9" fill="#fff" opacity=".95"/><rect x="13" y="2" width="9" height="9" fill="#fff" opacity=".8"/><rect x="2" y="13" width="9" height="9" fill="#fff" opacity=".8"/><rect x="13" y="13" width="9" height="9" fill="#fff" opacity=".65"/></svg>',
+  network:'<svg class="issuer-ico" viewBox="0 0 24 24" fill="none"><path d="M6.6 7.4 11.3 15M17.4 7.4 12.7 15M7 6h10" stroke="#fff" stroke-width="1.6" opacity=".85"/><circle cx="5" cy="6" r="2.4" fill="#fff"/><circle cx="19" cy="6" r="2.4" fill="#fff"/><circle cx="12" cy="17.5" r="2.7" fill="#fff"/></svg>',
+  shield:'<svg class="issuer-ico" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.4 8.6-8 11-4.6-2.4-8-6-8-11V5l8-3z" fill="#fff" opacity=".95"/><path d="M9 12l2 2 4-4" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  award:'<svg class="issuer-ico" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="6" fill="#fff" opacity=".95"/><path d="M8 14l-2 7 6-3 6 3-2-7" fill="#fff" opacity=".85"/></svg>'
+};
+
+const grid=document.getElementById('grid');
+const filtersEl=document.getElementById('filters');
+const statsEl=document.getElementById('stats');
+document.getElementById('year').textContent=new Date().getFullYear();
+
+/* Stats */
+const organismes=new Set(certifications.map(c=>c.issuer)).size;
+const parcours=certifications.filter(c=>c.level==="Parcours").length;
+statsEl.innerHTML=`
+  <div class="stat"><div class="num">${certifications.length}</div><div class="lbl">Badges &amp; certifications</div></div>
+  <div class="stat"><div class="num">${organismes}</div><div class="lbl">Organismes</div></div>
+  <div class="stat"><div class="num">${parcours}</div><div class="lbl">Parcours AZ-104</div></div>
+`;
+
+/* Filtres (par organisme) */
+const issuers=["Tous",...[...new Set(certifications.map(c=>c.issuer))]];
+let current="Tous";
+issuers.forEach(name=>{
+  const b=document.createElement('button');
+  b.className='filter'+(name==="Tous"?' active':'');
+  b.textContent=name;
+  b.onclick=()=>{current=name;document.querySelectorAll('.filter').forEach(f=>f.classList.remove('active'));b.classList.add('active');render();};
+  filtersEl.appendChild(b);
+});
+
+function card(c){
+  const meta=ISSUERS[c.issuer]||ISSUERS._default;
+  const grad=c.color||meta.grad;
+  const ico=ICONS[meta.ico]||ICONS.award;
+  const banner=`background:linear-gradient(135deg,${grad[0]},${grad[1]});`;
+  const tags=(c.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('');
+  const foot=c.verifyUrl
+    ? `<a class="verify" href="${c.verifyUrl}" target="_blank" rel="noopener">Vérifier le badge →</a>`
+    : `<span class="verified">✓ Vérifié</span>`;
+  return `
+  <div class="card">
+    <div class="card-banner" style="${banner}">
+      ${c.level?`<span class="level">${c.level}</span>`:''}
+      ${ico}
+      <span class="issuer-name">${c.issuer}</span>
+    </div>
+    <div class="card-body">
+      ${c.category?`<div class="card-cat">${c.category}</div>`:''}
+      <div class="card-title">${c.title}</div>
+      ${c.desc?`<div class="card-desc">${c.desc}</div>`:''}
+      ${tags?`<div class="tags">${tags}</div>`:''}
+      <div class="card-foot">${foot}<span class="card-date">${c.date||''}</span></div>
+    </div>
+  </div>`;
+}
+
+function render(){
+  const list=current==="Tous"?certifications:certifications.filter(c=>c.issuer===current);
+  grid.innerHTML=list.map(card).join('');
+}
+render();
+</script>
+</body>
+</html>
