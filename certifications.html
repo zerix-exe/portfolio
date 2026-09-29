@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Certifications — Titouan MURE</title>
 <meta name="description" content="Certifications et badges de Titouan MURE — Microsoft Learn, Cisco Networking Academy, Fortinet.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjM2I4MmY2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzFkNGVkOCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTUiIGZpbGw9InVybCgjZykiLz4KICA8IS0tIHJ1YmFuIC0tPgogIDxwYXRoIGQ9Ik0yNCAzNCBMMjAgNTQgTDMyIDQ3IEw0NCA1NCBMNDAgMzQgWiIgZmlsbD0iIzBmMTcyYSIgb3BhY2l0eT0iLjI1Ii8+CiAgPHBhdGggZD0iTTI0IDMzIEwyMSA1MSBMMzIgNDUgTDQzIDUxIEw0MCAzMyBaIiBmaWxsPSIjZmZmZmZmIi8+CiAgPCEtLSBtw6lkYWlsbGUgLS0+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIyNiIgcj0iMTUiIGZpbGw9IiNmZmZmZmYiLz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjI2IiByPSIxNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGJlYWZlIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8cGF0aCBkPSJNMzIgMTcuNSBsMi4yIDQuNSA1IC43IC0zLjYgMy41IC44NSA1IC00LjQ1IC0yLjM1IC00LjQ1IDIuMzUgLjg1IC01IC0zLjYgLTMuNSA1IC0uNyBaIiBmaWxsPSIjMjU2M2ViIi8+Cjwvc3ZnPgo=">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -61,6 +62,13 @@
   .stat{background:var(--card);border:1px solid var(--border-soft);border-radius:14px;padding:16px 26px;box-shadow:var(--shadow-sm);min-width:120px}
   .stat .num{font-size:26px;font-weight:800;color:var(--ink);letter-spacing:-.02em}
   .stat .lbl{font-size:12.5px;color:var(--gray);font-weight:500;margin-top:2px}
+  .domains{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:26px}
+  .domains .d-lbl{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-light)}
+  .domains .d-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+  .domains .d-chip{display:inline-flex;align-items:center;gap:8px;background:var(--card);
+    border:1px solid var(--border-soft);border-radius:999px;padding:9px 16px;
+    font-size:13.5px;font-weight:600;color:var(--ink-soft);box-shadow:var(--shadow-sm)}
+  .domains .d-chip .d-dot{width:8px;height:8px;border-radius:50%}
 
   /* FILTERS */
   .filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;margin:48px 0 32px}
@@ -91,6 +99,34 @@
   .verify:hover{gap:9px}
   .verified{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-size:13.5px;font-weight:700}
   .card-date{font-size:13px;color:var(--gray);font-weight:500}
+
+  /* COLLECTIONS (vue d'accueil) */
+  .collections{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;
+    position:relative;z-index:1;padding-bottom:36px}
+  .collection{position:relative;border-radius:var(--radius);overflow:hidden;cursor:pointer;
+    box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s;color:#fff;min-height:230px;
+    display:flex;flex-direction:column;justify-content:space-between;padding:26px}
+  .collection:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+  .collection::after{content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 80% 0%,rgba(255,255,255,.18),transparent 55%);pointer-events:none}
+  .collection .c-top{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between}
+  .collection .c-ico{width:46px;height:46px}
+  .collection .c-count{background:rgba(255,255,255,.9);color:var(--ink);font-weight:800;font-size:14px;
+    padding:6px 14px;border-radius:999px}
+  .collection .c-mid{position:relative;z-index:1;margin-top:auto}
+  .collection .c-name{font-size:23px;font-weight:800;letter-spacing:-.01em;text-shadow:0 1px 3px rgba(0,0,0,.18)}
+  .collection .c-desc{font-size:13.5px;line-height:1.5;opacity:.92;margin-top:6px;max-width:90%}
+  .collection .c-cta{position:relative;z-index:1;margin-top:16px;font-weight:700;font-size:14px;
+    display:inline-flex;align-items:center;gap:6px;transition:gap .15s}
+  .collection:hover .c-cta{gap:10px}
+  .collection .c-doms{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .collection .c-dom{background:rgba(255,255,255,.18);font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:7px}
+
+  /* Barre retour en vue détail */
+  .back-bar{position:relative;z-index:1;margin-bottom:22px}
+  .back-link{display:inline-flex;align-items:center;gap:7px;color:var(--gray);font-size:14px;font-weight:600;
+    cursor:pointer;transition:.15s}
+  .back-link:hover{color:var(--blue);gap:10px}
 
   footer{border-top:1px solid var(--border-soft);position:relative;z-index:1;padding:34px 0;text-align:center;color:var(--gray);font-size:14px}
 
@@ -141,11 +177,16 @@
     <h1>Mes <span class="grad">Certifications</span></h1>
     <p>Badges, modules et parcours obtenus auprès de Microsoft Learn, Cisco Networking Academy et Fortinet — chacun attestant d'une compétence en réseau, systèmes et cybersécurité.</p>
     <div class="stats" id="stats"></div>
+    <div class="domains" id="domains"></div>
   </div>
 </header>
 
 <div class="container">
   <div class="filters" id="filters"></div>
+  <div class="back-bar" id="backBar" style="display:none">
+    <span class="back-link" onclick="goHome()">← Toutes les certifications</span>
+  </div>
+  <div class="collections" id="collections"></div>
   <div class="grid" id="grid"></div>
 </div>
 
@@ -323,19 +364,44 @@ const ICONS = {
   award:'<svg class="issuer-ico" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="6" fill="#fff" opacity=".95"/><path d="M8 14l-2 7 6-3 6 3-2-7" fill="#fff" opacity=".85"/></svg>'
 };
 
+/* Présentation de chaque collection (vue d'accueil) */
+const COLLECTIONS = {
+  "Microsoft":{ desc:"Cloud, identité et administration : Azure, Microsoft Entra, Windows Server et PowerShell.",
+    doms:["Azure & Cloud","Identité","Windows Server","Scripting"] },
+  "Cisco":{ desc:"Réseau et cybersécurité : parcours CCNA complet et fondamentaux de la sécurité.",
+    doms:["Réseau","Routage","Commutation","Cybersécurité"] },
+  "Fortinet":{ desc:"Sécurité réseau et cybermenaces : certifications NSE et pare-feu nouvelle génération.",
+    doms:["Sécurité réseau","NGFW","Menaces","Cloud"] }
+};
+/* Domaines couverts (nom + couleur de la pastille) */
+const DOMAINES = [
+  {nom:"Réseau",        col:"#0aa5d9"},
+  {nom:"Systèmes",      col:"#7c3aed"},
+  {nom:"Cloud",         col:"#2563eb"},
+  {nom:"Cybersécurité", col:"#e23b2e"}
+];
+
 const grid=document.getElementById('grid');
+const collectionsEl=document.getElementById('collections');
+const backBar=document.getElementById('backBar');
 const filtersEl=document.getElementById('filters');
 const statsEl=document.getElementById('stats');
+const domainsEl=document.getElementById('domains');
 document.getElementById('year').textContent=new Date().getFullYear();
 
 /* Stats */
 const organismes=new Set(certifications.map(c=>c.issuer)).size;
-const parcours=certifications.filter(c=>c.level==="Parcours").length;
 statsEl.innerHTML=`
   <div class="stat"><div class="num">${certifications.length}</div><div class="lbl">Badges &amp; certifications</div></div>
-  <div class="stat"><div class="num">${organismes}</div><div class="lbl">Organismes</div></div>
-  <div class="stat"><div class="num">${parcours}</div><div class="lbl">Parcours AZ-104</div></div>
+  <div class="stat"><div class="num">${organismes}</div><div class="lbl">Organismes reconnus</div></div>
 `;
+
+/* Domaines (nommés, sous les stats) */
+domainsEl.innerHTML=`
+  <span class="d-lbl">Domaines couverts</span>
+  <div class="d-chips">
+    ${DOMAINES.map(d=>`<span class="d-chip"><span class="d-dot" style="background:${d.col}"></span>${d.nom}</span>`).join('')}
+  </div>`;
 
 /* Filtres (par organisme) */
 const issuers=["Tous",...[...new Set(certifications.map(c=>c.issuer))]];
@@ -344,10 +410,39 @@ issuers.forEach(name=>{
   const b=document.createElement('button');
   b.className='filter'+(name==="Tous"?' active':'');
   b.textContent=name;
-  b.onclick=()=>{current=name;document.querySelectorAll('.filter').forEach(f=>f.classList.remove('active'));b.classList.add('active');render();};
+  b.dataset.name=name;
+  b.onclick=()=>select(name);
   filtersEl.appendChild(b);
 });
+function select(name){
+  current=name;
+  document.querySelectorAll('.filter').forEach(f=>f.classList.toggle('active',f.dataset.name===name));
+  render();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function goHome(){select("Tous");}
 
+/* Carte "collection" (accueil) */
+function collectionCard(issuer){
+  const meta=ISSUERS[issuer]||ISSUERS._default;
+  const info=COLLECTIONS[issuer]||{desc:"",doms:[]};
+  const ico=ICONS[meta.ico]||ICONS.award;
+  const count=certifications.filter(c=>c.issuer===issuer).length;
+  const bg=`background:linear-gradient(135deg,${meta.grad[0]},${meta.grad[1]});`;
+  const doms=info.doms.map(d=>`<span class="c-dom">${d}</span>`).join('');
+  return `
+  <div class="collection" style="${bg}" onclick="select('${issuer}')">
+    <div class="c-top">${ico}<span class="c-count">${count} badge${count>1?'s':''}</span></div>
+    <div class="c-mid">
+      <div class="c-name">${issuer}</div>
+      <div class="c-desc">${info.desc}</div>
+      <div class="c-doms">${doms}</div>
+    </div>
+    <span class="c-cta">Découvrir →</span>
+  </div>`;
+}
+
+/* Carte badge (vue détail) */
 function card(c){
   const meta=ISSUERS[c.issuer]||ISSUERS._default;
   const grad=c.color||meta.grad;
@@ -375,8 +470,19 @@ function card(c){
 }
 
 function render(){
-  const list=current==="Tous"?certifications:certifications.filter(c=>c.issuer===current);
-  grid.innerHTML=list.map(card).join('');
+  if(current==="Tous"){
+    // Vue d'accueil : les collections, pas le détail
+    collectionsEl.style.display='grid';
+    grid.style.display='none';
+    backBar.style.display='none';
+    collectionsEl.innerHTML=issuers.filter(n=>n!=="Tous").map(collectionCard).join('');
+  }else{
+    // Vue détail : badges de l'organisme choisi
+    collectionsEl.style.display='none';
+    grid.style.display='grid';
+    backBar.style.display='block';
+    grid.innerHTML=certifications.filter(c=>c.issuer===current).map(card).join('');
+  }
 }
 render();
 </script>
