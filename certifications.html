@@ -116,7 +116,8 @@
   .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
   .tag{font-size:12px;font-weight:600;padding:5px 11px;border-radius:8px;background:rgba(37,99,235,.08);color:var(--blue)}
   .card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding-top:16px;border-top:1px solid var(--border-soft)}
-  .verify{display:inline-flex;align-items:center;gap:6px;color:var(--blue);font-size:14px;font-weight:700;transition:.15s}
+  .verify{display:inline-flex;align-items:center;gap:6px;color:var(--blue);font-size:14px;font-weight:700;transition:gap .15s;
+    background:none;border:none;padding:0;cursor:pointer;font-family:inherit}
   .verify:hover{gap:9px}
   .verified{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-size:13.5px;font-weight:700}
   .card-date{font-size:13px;color:var(--gray);font-weight:500}
@@ -174,6 +175,15 @@
     display:flex;align-items:center;justify-content:center}
   .contact-row .ci.mail{background:rgba(37,99,235,.1)}
   .contact-row .ci.li{background:#0a66c2}
+  /* BADGE MODAL */
+  .badge-modal{max-width:360px;width:100%;text-align:center;padding:26px 24px 22px}
+  .badge-modal h3{font-size:18px;font-weight:800;letter-spacing:-.01em;line-height:1.3;padding:0 24px}
+  .badge-modal .bframe{margin:18px auto 4px;min-height:280px;display:flex;align-items:center;justify-content:center}
+  .badge-modal iframe{border:0;width:150px;height:270px}
+  .badge-modal .bfall{display:inline-flex;align-items:center;gap:6px;margin-top:8px;
+    color:var(--blue);font-size:13.5px;font-weight:600}
+  .badge-modal .bfall:hover{text-decoration:underline}
+
   .contact-row .ct{display:flex;flex-direction:column;min-width:0}
   .contact-row .ct .t{display:block;font-size:15px;font-weight:700;line-height:1.3}
   .contact-row .ct .d{display:block;font-size:13px;color:var(--gray);margin-top:2px;line-height:1.3;
@@ -221,6 +231,16 @@
   <div class="container">© <span id="year"></span> Titouan MURE · Administrateur Systèmes &amp; Réseaux</div>
 </footer>
 
+<!-- BADGE MODAL -->
+<div class="modal-overlay" id="badgeModal" onclick="if(event.target===this)closeBadge()">
+  <div class="modal badge-modal" role="dialog" aria-modal="true" aria-label="Badge">
+    <button class="modal-close" onclick="closeBadge()" aria-label="Fermer">✕</button>
+    <h3 id="badgeTitle">Badge</h3>
+    <div class="bframe" id="badgeFrame"></div>
+    <a class="bfall" id="badgeFallback" href="#" target="_blank" rel="noopener">Ouvrir sur Credly ↗</a>
+  </div>
+</div>
+
 <!-- CONTACT MODAL -->
 <div class="modal-overlay" id="contactModal" onclick="if(event.target===this)closeContact()">
   <div class="modal" role="dialog" aria-modal="true" aria-label="Me contacter">
@@ -245,7 +265,25 @@
 <script>
 function openContact(){document.getElementById('contactModal').classList.add('open')}
 function closeContact(){document.getElementById('contactModal').classList.remove('open')}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeContact()});
+
+/* Pop-up badge : intègre le badge Credly dans la page (pas de nouvel onglet) */
+function openBadge(url,title){
+  var m=url.match(/badges\/([0-9a-f-]+)/i);
+  var frame=document.getElementById('badgeFrame');
+  document.getElementById('badgeTitle').textContent=title||'Badge';
+  document.getElementById('badgeFallback').href=url;
+  if(m){
+    frame.innerHTML='<iframe src="https://www.credly.com/embedded_badge/'+m[1]+'" title="'+(title||'Badge')+'" allowtransparency="true"></iframe>';
+  }else{
+    frame.innerHTML='';
+  }
+  document.getElementById('badgeModal').classList.add('open');
+}
+function closeBadge(){
+  document.getElementById('badgeModal').classList.remove('open');
+  document.getElementById('badgeFrame').innerHTML=''; // stoppe le chargement de l'iframe
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeContact();closeBadge();}});
 </script>
 
 <script>
@@ -500,7 +538,7 @@ function card(c){
   const banner=`background:linear-gradient(135deg,${grad[0]},${grad[1]});`;
   const tags=(c.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('');
   const foot=c.verifyUrl
-    ? `<a class="verify" href="${c.verifyUrl}" target="_blank" rel="noopener">Vérifier le badge →</a>`
+    ? `<button class="verify" type="button" onclick="openBadge('${c.verifyUrl}','${(c.title||'').replace(/'/g,"\\'")}')">Voir le badge →</button>`
     : `<span class="verified">✓ Vérifié</span>`;
   return `
   <div class="card">
