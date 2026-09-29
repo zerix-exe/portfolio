@@ -45,6 +45,27 @@
   .nav-links a{color:var(--gray);font-size:14px;font-weight:500;padding:8px 12px;border-radius:8px;transition:.15s}
   .nav-links a:hover{color:var(--ink);background:rgba(37,99,235,.06)}
   .nav-links a.active{color:var(--blue);font-weight:600}
+  /* MENU déroulant */
+  .menu-wrap{position:relative}
+  .btn-menu{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--border);
+    color:var(--ink-soft);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;
+    padding:8px 15px;border-radius:999px;transition:.15s}
+  .btn-menu:hover{border-color:var(--blue);color:var(--blue)}
+  .btn-menu svg{transition:transform .2s}
+  .menu-wrap.open .btn-menu{border-color:var(--blue);color:var(--blue)}
+  .menu-wrap.open .btn-menu svg{transform:rotate(180deg)}
+  .menu-drop{position:absolute;top:calc(100% + 8px);right:0;min-width:190px;background:var(--card);
+    border:1px solid var(--border-soft);border-radius:14px;box-shadow:var(--shadow-lg);padding:6px;
+    opacity:0;visibility:hidden;transform:translateY(-6px);transition:.15s;z-index:120}
+  .menu-wrap.open .menu-drop{opacity:1;visibility:visible;transform:translateY(0)}
+  .menu-item{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:none;border:none;
+    font-family:inherit;font-size:14px;font-weight:500;color:var(--ink-soft);cursor:pointer;
+    padding:10px 12px;border-radius:9px;transition:.12s}
+  .menu-item:hover{background:rgba(37,99,235,.07);color:var(--blue)}
+  .menu-item.on{color:var(--blue);font-weight:700}
+  .menu-item .mdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .menu-sep{height:1px;background:var(--border-soft);margin:5px 8px}
+
   .btn-contact{background:var(--blue);color:#fff!important;padding:9px 18px!important;border-radius:999px;font-weight:600;box-shadow:var(--shadow-sm);transition:.15s;border:none;cursor:pointer;font-family:inherit;font-size:14px}
   .btn-contact:hover{background:var(--blue-dark)!important}
   @media(max-width:640px){.nav-links a:not(.btn-contact){display:none}}
@@ -165,7 +186,13 @@
   <div class="nav-inner">
     <a href="#top" class="brand"><img class="avatar" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCABgAGADASIAAhEBAxEB/8QAHAAAAgMBAQEBAAAAAAAAAAAABAYDBQcIAgAB/8QANxAAAQMDAgMHAQUIAwAAAAAAAQIDBAAFEQYhEhMxByJBUWFxgZEIFCMysRVCQ1JicoLBkqHR/8QAGgEAAgMBAQAAAAAAAAAAAAAAAAECAwUEBv/EAB4RAAMAAwADAQEAAAAAAAAAAAABAgMREgQhMUET/9oADAMBAAIRAxEAPwB2YhOLSCAAPWpgwUnBG4qxaCeWCCMYqJSeNZNPYECG8VKE1IlupA3QAMWq+5VTSXWITC5El5thlsZU44oJSkepNI137ZtLW1ZQwuVPI/eYbwj/AJKxSbS+jSb+DiWq8FqlfTPavpzU8pMNDjsOSs4Q3IAAWfIEbZp15GaE0/gNa+lcpqoltVZOMYGaHW3TEVrjVCutelWqm80O7HJOKBFq2jOBViwzwJxihG00YytaRjYihgfq4+Vd1J6b4FUerdTQdG2V25zyogHgaaT+Z1w9Ej/3wFODaNhiud/tC6hW/qtmysrymGwk8PhznN8+4Tw1B1pE5W2I2oNc3m+yHrjepKlIQctw0HDbXkMdPnrSy2xfdSLLrMR11rySg8AHpTFY9PjUl0Ys7OXO8A4r+Y9Sfr/qukrLpCDYLW3EZaSOBIBOOtceTNy/X078WDpe3pHKCbDfbOv7wqJIaQk8SVYOUnzp40v2yah09cWv2nMdukBZAdbewVpHmhXgR5HY1ruo4DHIUngSc+lYR2hWNuE6l5hPLKj3sdKjh8h1WmPN4qmekdRQ50W7QWJ0J1L0aQgONuJ6KBr5bW1ZL9mzVDk+23DTr6yowiH2M+CFHCh9cH5NbK43WgntGc/RVrbxUDqcVYut0K6imRD2xRSE1C0mi205xTI7J2XHEp4QdvWuaPtEWCbC123dgFfdZ8YLSvw5iBwqT74CT81020ilfXVnauxjNTW0ORWwHUhY/ihxPT14SR7VTmrmdnR48d3yZJ2Tvac0ZANzvktQnyNylDSl8oeRIGM+daxbNZWTUrCpFslF5pBwsFJSU/Bpe1Loy7TYz7VsnritLSA0hpCcI88565r3YrE9pOwz3JalOPOMnZRBI8qzKpP2bER+C9qntIswmrhMR50h1JI/CZJGaRdQPtajjPR1xZUV3hK2+c3jp61dQ9NPXKJKU3IdTIc/K4hWFI3zkfpUblhk2xLhkOOKSoYSFqyU7edC5XtfQqafp/C0+zTo6ZCF01LIQER5aExoueqwFZWr2yAPXBrbnEVnPYQxyYt2aZSRFb5CU+i8K4h79K091vatXFXU7MbNHFuSsdboN1FWjqNqBeTiplQU2npRjKa9SIqWxxN7AdRXzApiCmUE9BQWpYinrU4Q2twtpUvCNyMJJB+oqzj0QpAWgpV0UMGoXPUuWWY7cUqQqRZgciIWN+JIUPkUma01U7AEmEwqO+t9oBtCEKUsK3zkjb4qyYUl+LKs77ymXo5VHeKFcKkEbZHuMH5qm1JZGbRbQ+wzcZgyE5EhQIHxjasb5Wmb+Pl+xS0RdS4hYkKQhZ2KQCCFeOx6VJqyaXEOJQcnhKR7npUDNljx5KZT5loQO8lCnSd/1oRpK9Raig2iN3npklDeBvwoBypR9gCacrq/QZb5h7Nl7LdJTNKaddjz2EsSH3+aUBYUQOEAZI8Tgn5prdTRy0ADA6eFCuitmZ5Wkefu3dOmVzyaBeR1qxeG9AvDamRLBySHEcI3z1NSR21EZ4TigmcbZq3YUDjFMD02nFFJFQjHFtS9qntL0towKRdro2JIGREY/EeP+I6f5YoAUu2qxzYjbV/sWUS1Dglto2L6E4wr+4dPUe1ZRce2KeuK3Gdbcacb7pSU9a1KZqh+/a9bjutusw3bOh9uO7jKeNQO+Ns4quv+kY0lOBGZODsooGfrWb5HKyNNGp43X81pmOTtbzrgSywhwk9NqZezBUqxamj3xTfPkp4i4hRxhspIIB8CemaYG9CJK8sR2+Z14ldEjzJ8qg1M9F0ZpibIaPE8pPLSs7FxwjA9gPL0q/w8DyPpLUop8vNwtN7pm76W1VbdaWCPerU4pUd8EFC8cbS0nCkKA6KB/wBHoaLe8a4x7LO1K6dmt3LrQVKtkkj73DKsBf8AWnyWPA+PQ+nVWkO0TTevI/Ms09K3gniciOjgfb90eI9RkV2OdHAWz9BOjrVg+KAe8aiM9o8KS9Wdtum9IvOwmS7dJ7RKFsRiAhtXkpZ2B9Bk0b2h6gd01om63KOvgkIa5bKv5VrPCD8Zz8VyoE5AJJJ6knqTVkR19It6NB1V27av1GlceNIRZ4i9uXCyFkeRcPe+mKTrGwm43iIxIUrluvJVIWTklAOVkn+0Gq7FNXZjYjqPWkC3qzyFcapGPFoJ7w+c4+avmUmQpvRqzV7RrOfbdX2yC5ESkuRHo61hSm28jhO37uw39T5U3TnGWGkvyHw02R7lXoB4mmFnTdthROTDiNsJQAEhAxgdMfQmlKY1hxFqYZRMlNKUhEg793O30HX1rnvwpy5uvz9L8fmvHi5/fwmF2h3C3hmAh5vf8UOpwtR/THtWF9sN3+/Xz9ksuZZhjvAdC4Rv9BgfWt6uluhaXscq5zVlRhsKkOqBxxEDupHucDFcpSX3Jsp6S8oqddWXFnzJOTXW+ZniPhyzuq6oqVIDZKVEcXgPE0fDekQXWZMV52PIawpDjailaD6Ebivx3hQpJSBzFHA9ak4aqSLTWtH/AGibpb0IianjG5sjYSmsIfA/qH5V/wDRrXNPa4sGso5ds89Ly0jK2Fjgdb90HfHqMiuRloryxJfgPokx5Dsd1o5Q40opUk+hHSo1C/Bpn//Z" alt="Titouan MURE"><span>Titouan MURE</span></a>
     <div class="nav-links">
-      <a href="#top" class="active">Certifications</a>
+      <div class="menu-wrap" id="menuWrap">
+        <button type="button" class="btn-menu" onclick="toggleMenu(event)">
+          Menu
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="menu-drop" id="menuDrop"></div>
+      </div>
       <button type="button" class="btn-contact" onclick="openContact()">Contact</button>
     </div>
   </div>
@@ -417,10 +444,33 @@ issuers.forEach(name=>{
 function select(name){
   current=name;
   document.querySelectorAll('.filter').forEach(f=>f.classList.toggle('active',f.dataset.name===name));
+  buildMenu();
+  closeMenu();
   render();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function goHome(){select("Tous");}
+
+/* Menu déroulant */
+const menuWrap=document.getElementById('menuWrap');
+const menuDrop=document.getElementById('menuDrop');
+function buildMenu(){
+  let html=`<button class="menu-item ${current==="Tous"?'on':''}" onclick="select('Tous')">
+      <svg class="mdot-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      Accueil</button>
+    <div class="menu-sep"></div>`;
+  issuers.filter(n=>n!=="Tous").forEach(n=>{
+    const col=(ISSUERS[n]||ISSUERS._default).grad[0];
+    html+=`<button class="menu-item ${current===n?'on':''}" onclick="select('${n}')">
+      <span class="mdot" style="background:${col}"></span>${n}</button>`;
+  });
+  menuDrop.innerHTML=html;
+}
+function toggleMenu(e){e.stopPropagation();menuWrap.classList.toggle('open');}
+function closeMenu(){menuWrap.classList.remove('open');}
+document.addEventListener('click',e=>{if(!menuWrap.contains(e.target))closeMenu();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+buildMenu();
 
 /* Carte "collection" (accueil) */
 function collectionCard(issuer){
