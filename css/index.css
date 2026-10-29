@@ -397,3 +397,51 @@
   .contact-grid { flex-direction: column; align-items: center; }
   .contact-card { width: 100%; max-width: 340px; }
 }
+
+/* ── CERTIFICATIONS HIGHLIGHT ── */
+.cert-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+.cert-hl-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.08);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  color: inherit;
+  cursor: default;
+  transition: transform .18s, box-shadow .18s;
+}
+.cert-hl-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
+.cert-hl-logo {
+  flex-shrink: 0;
+  width: 52px; height: 52px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  background: #f4f6fa;
+}
+.cert-hl-body { flex: 1; min-width: 0; }
+.cert-hl-issuer {
+  font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .06em;
+  color: #888; margin-bottom: 4px;
+}
+.cert-hl-name {
+  font-size: 14px; font-weight: 700;
+  color: #1d1d1f; line-height: 1.35; margin-bottom: 8px;
+}
+.cert-hl-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.cert-hl-tags span {
+  font-size: 11px; font-weight: 600;
+  padding: 3px 9px; border-radius: 999px;
+  background: #f0f4ff; color: #3b82f6;
+}
+.cert-hl-cisco .cert-hl-tags span  { background: #e6f5fc; color: #1BA0D7; }
+.cert-hl-fortinet .cert-hl-tags span { background: #fff0ef; color: #EE3124; }
+.cert-hl-cta { margin-top: 28px; text-align: center; }

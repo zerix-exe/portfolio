@@ -41,16 +41,24 @@ function closeContactPopup() {
 
 // Fermer avec Escape
 
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
+// ── Nav highlight au scroll ───────────────
+(function () {
+  const SECTION_IDS = ['about', 'competences', 'parcours', 'certifications', 'projets-section'];
+  const navLinks = document.querySelectorAll('.nav-links a');
 
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 80) current = s.id;
-  });
-  navLinks.forEach(a => {
-    a.classList.remove('active');
-    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
-  });
-});
+  function onScroll() {
+    const scrollY = window.scrollY + 120;
+    let current = '';
+    SECTION_IDS.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollY) current = id;
+    });
+    navLinks.forEach(a => {
+      a.classList.remove('nav-active');
+      if (current && a.getAttribute('href') === '#' + current) a.classList.add('nav-active');
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();

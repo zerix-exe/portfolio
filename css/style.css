@@ -1115,3 +1115,6 @@ footer {
 }
 .cp-label { font-size: 13px; font-weight: 600; color: inherit; }
 .cp-val { font-size: 11px; color: var(--text-3); margin-top: 1px; }
+
+/* ── NAV ACTIVE (scroll highlight) ── */
+.nav-links a.nav-active { color: var(--blue); font-weight: 600; }
