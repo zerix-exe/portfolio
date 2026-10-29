@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Certifications — Titouan MURE</title>
 <meta name="description" content="Certifications et badges de Titouan MURE — Microsoft Learn, Cisco Networking Academy, Fortinet.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjM2I4MmY2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzFkNGVkOCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTUiIGZpbGw9InVybCgjZykiLz4KICA8IS0tIHJ1YmFuIC0tPgogIDxwYXRoIGQ9Ik0yNCAzNCBMMjAgNTQgTDMyIDQ3IEw0NCA1NCBMNDAgMzQgWiIgZmlsbD0iIzBmMTcyYSIgb3BhY2l0eT0iLjI1Ii8+CiAgPHBhdGggZD0iTTI0IDMzIEwyMSA1MSBMMzIgNDUgTDQzIDUxIEw0MCAzMyBaIiBmaWxsPSIjZmZmZmZmIi8+CiAgPCEtLSBtw6lkYWlsbGUgLS0+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIyNiIgcj0iMTUiIGZpbGw9IiNmZmZmZmYiLz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjI2IiByPSIxNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGJlYWZlIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8cGF0aCBkPSJNMzIgMTcuNSBsMi4yIDQuNSA1IC43IC0zLjYgMy41IC44NSA1IC00LjQ1IC0yLjM1IC00LjQ1IDIuMzUgLjg1IC01IC0zLjYgLTMuNSA1IC0uNyBaIiBmaWxsPSIjMjU2M2ViIi8+Cjwvc3ZnPgo=">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -45,27 +44,6 @@
   .nav-links a{color:var(--gray);font-size:14px;font-weight:500;padding:8px 12px;border-radius:8px;transition:.15s}
   .nav-links a:hover{color:var(--ink);background:rgba(37,99,235,.06)}
   .nav-links a.active{color:var(--blue);font-weight:600}
-  /* MENU déroulant */
-  .menu-wrap{position:relative}
-  .btn-menu{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--border);
-    color:var(--ink-soft);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;
-    padding:8px 15px;border-radius:999px;transition:.15s}
-  .btn-menu:hover{border-color:var(--blue);color:var(--blue)}
-  .btn-menu svg{transition:transform .2s}
-  .menu-wrap.open .btn-menu{border-color:var(--blue);color:var(--blue)}
-  .menu-wrap.open .btn-menu svg{transform:rotate(180deg)}
-  .menu-drop{position:absolute;top:calc(100% + 8px);right:0;min-width:190px;background:var(--card);
-    border:1px solid var(--border-soft);border-radius:14px;box-shadow:var(--shadow-lg);padding:6px;
-    opacity:0;visibility:hidden;transform:translateY(-6px);transition:.15s;z-index:120}
-  .menu-wrap.open .menu-drop{opacity:1;visibility:visible;transform:translateY(0)}
-  .menu-item{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:none;border:none;
-    font-family:inherit;font-size:14px;font-weight:500;color:var(--ink-soft);cursor:pointer;
-    padding:10px 12px;border-radius:9px;transition:.12s}
-  .menu-item:hover{background:rgba(37,99,235,.07);color:var(--blue)}
-  .menu-item.on{color:var(--blue);font-weight:700}
-  .menu-item .mdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-  .menu-sep{height:1px;background:var(--border-soft);margin:5px 8px}
-
   .btn-contact{background:var(--blue);color:#fff!important;padding:9px 18px!important;border-radius:999px;font-weight:600;box-shadow:var(--shadow-sm);transition:.15s;border:none;cursor:pointer;font-family:inherit;font-size:14px}
   .btn-contact:hover{background:var(--blue-dark)!important}
   @media(max-width:640px){.nav-links a:not(.btn-contact){display:none}}
@@ -83,13 +61,6 @@
   .stat{background:var(--card);border:1px solid var(--border-soft);border-radius:14px;padding:16px 26px;box-shadow:var(--shadow-sm);min-width:120px}
   .stat .num{font-size:26px;font-weight:800;color:var(--ink);letter-spacing:-.02em}
   .stat .lbl{font-size:12.5px;color:var(--gray);font-weight:500;margin-top:2px}
-  .domains{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:26px}
-  .domains .d-lbl{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-light)}
-  .domains .d-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-  .domains .d-chip{display:inline-flex;align-items:center;gap:8px;background:var(--card);
-    border:1px solid var(--border-soft);border-radius:999px;padding:9px 16px;
-    font-size:13.5px;font-weight:600;color:var(--ink-soft);box-shadow:var(--shadow-sm)}
-  .domains .d-chip .d-dot{width:8px;height:8px;border-radius:50%}
 
   /* FILTERS */
   .filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;margin:48px 0 32px}
@@ -116,39 +87,10 @@
   .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
   .tag{font-size:12px;font-weight:600;padding:5px 11px;border-radius:8px;background:rgba(37,99,235,.08);color:var(--blue)}
   .card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding-top:16px;border-top:1px solid var(--border-soft)}
-  .verify{display:inline-flex;align-items:center;gap:6px;color:var(--blue);font-size:14px;font-weight:700;transition:gap .15s;
-    background:none;border:none;padding:0;cursor:pointer;font-family:inherit}
+  .verify{display:inline-flex;align-items:center;gap:6px;color:var(--blue);font-size:14px;font-weight:700;transition:.15s}
   .verify:hover{gap:9px}
   .verified{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-size:13.5px;font-weight:700}
   .card-date{font-size:13px;color:var(--gray);font-weight:500}
-
-  /* COLLECTIONS (vue d'accueil) */
-  .collections{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;
-    position:relative;z-index:1;padding-bottom:36px}
-  .collection{position:relative;border-radius:var(--radius);overflow:hidden;cursor:pointer;
-    box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s;color:#fff;min-height:230px;
-    display:flex;flex-direction:column;justify-content:space-between;padding:26px}
-  .collection:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
-  .collection::after{content:"";position:absolute;inset:0;
-    background:radial-gradient(circle at 80% 0%,rgba(255,255,255,.18),transparent 55%);pointer-events:none}
-  .collection .c-top{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between}
-  .collection .c-ico{width:46px;height:46px}
-  .collection .c-count{background:rgba(255,255,255,.9);color:var(--ink);font-weight:800;font-size:14px;
-    padding:6px 14px;border-radius:999px}
-  .collection .c-mid{position:relative;z-index:1;margin-top:auto}
-  .collection .c-name{font-size:23px;font-weight:800;letter-spacing:-.01em;text-shadow:0 1px 3px rgba(0,0,0,.18)}
-  .collection .c-desc{font-size:13.5px;line-height:1.5;opacity:.92;margin-top:6px;max-width:90%}
-  .collection .c-cta{position:relative;z-index:1;margin-top:16px;font-weight:700;font-size:14px;
-    display:inline-flex;align-items:center;gap:6px;transition:gap .15s}
-  .collection:hover .c-cta{gap:10px}
-  .collection .c-doms{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-  .collection .c-dom{background:rgba(255,255,255,.18);font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:7px}
-
-  /* Barre retour en vue détail */
-  .back-bar{position:relative;z-index:1;margin-bottom:22px}
-  .back-link{display:inline-flex;align-items:center;gap:7px;color:var(--gray);font-size:14px;font-weight:600;
-    cursor:pointer;transition:.15s}
-  .back-link:hover{color:var(--blue);gap:10px}
 
   footer{border-top:1px solid var(--border-soft);position:relative;z-index:1;padding:34px 0;text-align:center;color:var(--gray);font-size:14px}
 
@@ -175,15 +117,6 @@
     display:flex;align-items:center;justify-content:center}
   .contact-row .ci.mail{background:rgba(37,99,235,.1)}
   .contact-row .ci.li{background:#0a66c2}
-  /* BADGE MODAL */
-  .badge-modal{max-width:360px;width:100%;text-align:center;padding:26px 24px 22px}
-  .badge-modal h3{font-size:18px;font-weight:800;letter-spacing:-.01em;line-height:1.3;padding:0 24px}
-  .badge-modal .bframe{margin:18px auto 4px;min-height:280px;display:flex;align-items:center;justify-content:center}
-  .badge-modal iframe{border:0;width:150px;height:270px}
-  .badge-modal .bfall{display:inline-flex;align-items:center;gap:6px;margin-top:8px;
-    color:var(--blue);font-size:13.5px;font-weight:600}
-  .badge-modal .bfall:hover{text-decoration:underline}
-
   .contact-row .ct{display:flex;flex-direction:column;min-width:0}
   .contact-row .ct .t{display:block;font-size:15px;font-weight:700;line-height:1.3}
   .contact-row .ct .d{display:block;font-size:13px;color:var(--gray);margin-top:2px;line-height:1.3;
@@ -196,13 +129,8 @@
   <div class="nav-inner">
     <a href="#top" class="brand"><img class="avatar" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCABgAGADASIAAhEBAxEB/8QAHAAAAgMBAQEBAAAAAAAAAAAABAYDBQcIAgAB/8QANxAAAQMDAgMHAQUIAwAAAAAAAQIDBAAFEQYhEhMxByJBUWFxgZEIFCMysRVCQ1JicoLBkqHR/8QAGgEAAgMBAQAAAAAAAAAAAAAAAAECAwUEBv/EAB4RAAMAAwADAQEAAAAAAAAAAAABAgMREgQhMUET/9oADAMBAAIRAxEAPwB2YhOLSCAAPWpgwUnBG4qxaCeWCCMYqJSeNZNPYECG8VKE1IlupA3QAMWq+5VTSXWITC5El5thlsZU44oJSkepNI137ZtLW1ZQwuVPI/eYbwj/AJKxSbS+jSb+DiWq8FqlfTPavpzU8pMNDjsOSs4Q3IAAWfIEbZp15GaE0/gNa+lcpqoltVZOMYGaHW3TEVrjVCutelWqm80O7HJOKBFq2jOBViwzwJxihG00YytaRjYihgfq4+Vd1J6b4FUerdTQdG2V25zyogHgaaT+Z1w9Ej/3wFODaNhiud/tC6hW/qtmysrymGwk8PhznN8+4Tw1B1pE5W2I2oNc3m+yHrjepKlIQctw0HDbXkMdPnrSy2xfdSLLrMR11rySg8AHpTFY9PjUl0Ys7OXO8A4r+Y9Sfr/qukrLpCDYLW3EZaSOBIBOOtceTNy/X078WDpe3pHKCbDfbOv7wqJIaQk8SVYOUnzp40v2yah09cWv2nMdukBZAdbewVpHmhXgR5HY1ruo4DHIUngSc+lYR2hWNuE6l5hPLKj3sdKjh8h1WmPN4qmekdRQ50W7QWJ0J1L0aQgONuJ6KBr5bW1ZL9mzVDk+23DTr6yowiH2M+CFHCh9cH5NbK43WgntGc/RVrbxUDqcVYut0K6imRD2xRSE1C0mi205xTI7J2XHEp4QdvWuaPtEWCbC123dgFfdZ8YLSvw5iBwqT74CT81020ilfXVnauxjNTW0ORWwHUhY/ihxPT14SR7VTmrmdnR48d3yZJ2Tvac0ZANzvktQnyNylDSl8oeRIGM+daxbNZWTUrCpFslF5pBwsFJSU/Bpe1Loy7TYz7VsnritLSA0hpCcI88565r3YrE9pOwz3JalOPOMnZRBI8qzKpP2bER+C9qntIswmrhMR50h1JI/CZJGaRdQPtajjPR1xZUV3hK2+c3jp61dQ9NPXKJKU3IdTIc/K4hWFI3zkfpUblhk2xLhkOOKSoYSFqyU7edC5XtfQqafp/C0+zTo6ZCF01LIQER5aExoueqwFZWr2yAPXBrbnEVnPYQxyYt2aZSRFb5CU+i8K4h79K091vatXFXU7MbNHFuSsdboN1FWjqNqBeTiplQU2npRjKa9SIqWxxN7AdRXzApiCmUE9BQWpYinrU4Q2twtpUvCNyMJJB+oqzj0QpAWgpV0UMGoXPUuWWY7cUqQqRZgciIWN+JIUPkUma01U7AEmEwqO+t9oBtCEKUsK3zkjb4qyYUl+LKs77ymXo5VHeKFcKkEbZHuMH5qm1JZGbRbQ+wzcZgyE5EhQIHxjasb5Wmb+Pl+xS0RdS4hYkKQhZ2KQCCFeOx6VJqyaXEOJQcnhKR7npUDNljx5KZT5loQO8lCnSd/1oRpK9Raig2iN3npklDeBvwoBypR9gCacrq/QZb5h7Nl7LdJTNKaddjz2EsSH3+aUBYUQOEAZI8Tgn5prdTRy0ADA6eFCuitmZ5Wkefu3dOmVzyaBeR1qxeG9AvDamRLBySHEcI3z1NSR21EZ4TigmcbZq3YUDjFMD02nFFJFQjHFtS9qntL0towKRdro2JIGREY/EeP+I6f5YoAUu2qxzYjbV/sWUS1Dglto2L6E4wr+4dPUe1ZRce2KeuK3Gdbcacb7pSU9a1KZqh+/a9bjutusw3bOh9uO7jKeNQO+Ns4quv+kY0lOBGZODsooGfrWb5HKyNNGp43X81pmOTtbzrgSywhwk9NqZezBUqxamj3xTfPkp4i4hRxhspIIB8CemaYG9CJK8sR2+Z14ldEjzJ8qg1M9F0ZpibIaPE8pPLSs7FxwjA9gPL0q/w8DyPpLUop8vNwtN7pm76W1VbdaWCPerU4pUd8EFC8cbS0nCkKA6KB/wBHoaLe8a4x7LO1K6dmt3LrQVKtkkj73DKsBf8AWnyWPA+PQ+nVWkO0TTevI/Ms09K3gniciOjgfb90eI9RkV2OdHAWz9BOjrVg+KAe8aiM9o8KS9Wdtum9IvOwmS7dJ7RKFsRiAhtXkpZ2B9Bk0b2h6gd01om63KOvgkIa5bKv5VrPCD8Zz8VyoE5AJJJ6knqTVkR19It6NB1V27av1GlceNIRZ4i9uXCyFkeRcPe+mKTrGwm43iIxIUrluvJVIWTklAOVkn+0Gq7FNXZjYjqPWkC3qzyFcapGPFoJ7w+c4+avmUmQpvRqzV7RrOfbdX2yC5ESkuRHo61hSm28jhO37uw39T5U3TnGWGkvyHw02R7lXoB4mmFnTdthROTDiNsJQAEhAxgdMfQmlKY1hxFqYZRMlNKUhEg793O30HX1rnvwpy5uvz9L8fmvHi5/fwmF2h3C3hmAh5vf8UOpwtR/THtWF9sN3+/Xz9ksuZZhjvAdC4Rv9BgfWt6uluhaXscq5zVlRhsKkOqBxxEDupHucDFcpSX3Jsp6S8oqddWXFnzJOTXW+ZniPhyzuq6oqVIDZKVEcXgPE0fDekQXWZMV52PIawpDjailaD6Ebivx3hQpJSBzFHA9ak4aqSLTWtH/AGibpb0IianjG5sjYSmsIfA/qH5V/wDRrXNPa4sGso5ds89Ly0jK2Fjgdb90HfHqMiuRloryxJfgPokx5Dsd1o5Q40opUk+hHSo1C/Bpn//Z" alt="Titouan MURE"><span>Titouan MURE</span></a>
     <div class="nav-links">
-      <div class="menu-wrap" id="menuWrap">
-        <button type="button" class="btn-menu" onclick="toggleMenu(event)">
-          Menu
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-        </button>
-        <div class="menu-drop" id="menuDrop"></div>
-      </div>
+      <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>Accueil</a>
+      <a href="#top" class="active">Certifications</a>
       <button type="button" class="btn-contact" onclick="openContact()">Contact</button>
     </div>
   </div>
@@ -214,32 +142,17 @@
     <h1>Mes <span class="grad">Certifications</span></h1>
     <p>Badges, modules et parcours obtenus auprès de Microsoft Learn, Cisco Networking Academy et Fortinet — chacun attestant d'une compétence en réseau, systèmes et cybersécurité.</p>
     <div class="stats" id="stats"></div>
-    <div class="domains" id="domains"></div>
   </div>
 </header>
 
 <div class="container">
   <div class="filters" id="filters"></div>
-  <div class="back-bar" id="backBar" style="display:none">
-    <span class="back-link" onclick="goHome()">← Toutes les certifications</span>
-  </div>
-  <div class="collections" id="collections"></div>
   <div class="grid" id="grid"></div>
 </div>
 
 <footer>
   <div class="container">© <span id="year"></span> Titouan MURE · Administrateur Systèmes &amp; Réseaux</div>
 </footer>
-
-<!-- BADGE MODAL -->
-<div class="modal-overlay" id="badgeModal" onclick="if(event.target===this)closeBadge()">
-  <div class="modal badge-modal" role="dialog" aria-modal="true" aria-label="Badge">
-    <button class="modal-close" onclick="closeBadge()" aria-label="Fermer">✕</button>
-    <h3 id="badgeTitle">Badge</h3>
-    <div class="bframe" id="badgeFrame"></div>
-    <a class="bfall" id="badgeFallback" href="#" target="_blank" rel="noopener">Ouvrir sur Credly ↗</a>
-  </div>
-</div>
 
 <!-- CONTACT MODAL -->
 <div class="modal-overlay" id="contactModal" onclick="if(event.target===this)closeContact()">
@@ -265,25 +178,7 @@
 <script>
 function openContact(){document.getElementById('contactModal').classList.add('open')}
 function closeContact(){document.getElementById('contactModal').classList.remove('open')}
-
-/* Pop-up badge : intègre le badge Credly dans la page (pas de nouvel onglet) */
-function openBadge(url,title){
-  var m=url.match(/badges\/([0-9a-f-]+)/i);
-  var frame=document.getElementById('badgeFrame');
-  document.getElementById('badgeTitle').textContent=title||'Badge';
-  document.getElementById('badgeFallback').href=url;
-  if(m){
-    frame.innerHTML='<iframe src="https://www.credly.com/embedded_badge/'+m[1]+'" title="'+(title||'Badge')+'" allowtransparency="true"></iframe>';
-  }else{
-    frame.innerHTML='';
-  }
-  document.getElementById('badgeModal').classList.add('open');
-}
-function closeBadge(){
-  document.getElementById('badgeModal').classList.remove('open');
-  document.getElementById('badgeFrame').innerHTML=''; // stoppe le chargement de l'iframe
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeContact();closeBadge();}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeContact()});
 </script>
 
 <script>
@@ -429,44 +324,19 @@ const ICONS = {
   award:'<svg class="issuer-ico" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="6" fill="#fff" opacity=".95"/><path d="M8 14l-2 7 6-3 6 3-2-7" fill="#fff" opacity=".85"/></svg>'
 };
 
-/* Présentation de chaque collection (vue d'accueil) */
-const COLLECTIONS = {
-  "Microsoft":{ desc:"Cloud, identité et administration : Azure, Microsoft Entra, Windows Server et PowerShell.",
-    doms:["Azure & Cloud","Identité","Windows Server","Scripting"] },
-  "Cisco":{ desc:"Réseau et cybersécurité : parcours CCNA complet et fondamentaux de la sécurité.",
-    doms:["Réseau","Routage","Commutation","Cybersécurité"] },
-  "Fortinet":{ desc:"Sécurité réseau et cybermenaces : certifications NSE et pare-feu nouvelle génération.",
-    doms:["Sécurité réseau","NGFW","Menaces","Cloud"] }
-};
-/* Domaines couverts (nom + couleur de la pastille) */
-const DOMAINES = [
-  {nom:"Réseau",        col:"#0aa5d9"},
-  {nom:"Systèmes",      col:"#7c3aed"},
-  {nom:"Cloud",         col:"#2563eb"},
-  {nom:"Cybersécurité", col:"#e23b2e"}
-];
-
 const grid=document.getElementById('grid');
-const collectionsEl=document.getElementById('collections');
-const backBar=document.getElementById('backBar');
 const filtersEl=document.getElementById('filters');
 const statsEl=document.getElementById('stats');
-const domainsEl=document.getElementById('domains');
 document.getElementById('year').textContent=new Date().getFullYear();
 
 /* Stats */
 const organismes=new Set(certifications.map(c=>c.issuer)).size;
+const parcours=certifications.filter(c=>c.level==="Parcours").length;
 statsEl.innerHTML=`
   <div class="stat"><div class="num">${certifications.length}</div><div class="lbl">Badges &amp; certifications</div></div>
-  <div class="stat"><div class="num">${organismes}</div><div class="lbl">Organismes reconnus</div></div>
+  <div class="stat"><div class="num">${organismes}</div><div class="lbl">Organismes</div></div>
+  <div class="stat"><div class="num">${parcours}</div><div class="lbl">Parcours AZ-104</div></div>
 `;
-
-/* Domaines (nommés, sous les stats) */
-domainsEl.innerHTML=`
-  <span class="d-lbl">Domaines couverts</span>
-  <div class="d-chips">
-    ${DOMAINES.map(d=>`<span class="d-chip"><span class="d-dot" style="background:${d.col}"></span>${d.nom}</span>`).join('')}
-  </div>`;
 
 /* Filtres (par organisme) */
 const issuers=["Tous",...[...new Set(certifications.map(c=>c.issuer))]];
@@ -475,62 +345,10 @@ issuers.forEach(name=>{
   const b=document.createElement('button');
   b.className='filter'+(name==="Tous"?' active':'');
   b.textContent=name;
-  b.dataset.name=name;
-  b.onclick=()=>select(name);
+  b.onclick=()=>{current=name;document.querySelectorAll('.filter').forEach(f=>f.classList.remove('active'));b.classList.add('active');render();};
   filtersEl.appendChild(b);
 });
-function select(name){
-  current=name;
-  document.querySelectorAll('.filter').forEach(f=>f.classList.toggle('active',f.dataset.name===name));
-  buildMenu();
-  closeMenu();
-  render();
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-function goHome(){select("Tous");}
 
-/* Menu déroulant */
-const menuWrap=document.getElementById('menuWrap');
-const menuDrop=document.getElementById('menuDrop');
-function buildMenu(){
-  let html=`<button class="menu-item ${current==="Tous"?'on':''}" onclick="select('Tous')">
-      <svg class="mdot-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
-      Accueil</button>
-    <div class="menu-sep"></div>`;
-  issuers.filter(n=>n!=="Tous").forEach(n=>{
-    const col=(ISSUERS[n]||ISSUERS._default).grad[0];
-    html+=`<button class="menu-item ${current===n?'on':''}" onclick="select('${n}')">
-      <span class="mdot" style="background:${col}"></span>${n}</button>`;
-  });
-  menuDrop.innerHTML=html;
-}
-function toggleMenu(e){e.stopPropagation();menuWrap.classList.toggle('open');}
-function closeMenu(){menuWrap.classList.remove('open');}
-document.addEventListener('click',e=>{if(!menuWrap.contains(e.target))closeMenu();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
-buildMenu();
-
-/* Carte "collection" (accueil) */
-function collectionCard(issuer){
-  const meta=ISSUERS[issuer]||ISSUERS._default;
-  const info=COLLECTIONS[issuer]||{desc:"",doms:[]};
-  const ico=ICONS[meta.ico]||ICONS.award;
-  const count=certifications.filter(c=>c.issuer===issuer).length;
-  const bg=`background:linear-gradient(135deg,${meta.grad[0]},${meta.grad[1]});`;
-  const doms=info.doms.map(d=>`<span class="c-dom">${d}</span>`).join('');
-  return `
-  <div class="collection" style="${bg}" onclick="select('${issuer}')">
-    <div class="c-top">${ico}<span class="c-count">${count} badge${count>1?'s':''}</span></div>
-    <div class="c-mid">
-      <div class="c-name">${issuer}</div>
-      <div class="c-desc">${info.desc}</div>
-      <div class="c-doms">${doms}</div>
-    </div>
-    <span class="c-cta">Découvrir →</span>
-  </div>`;
-}
-
-/* Carte badge (vue détail) */
 function card(c){
   const meta=ISSUERS[c.issuer]||ISSUERS._default;
   const grad=c.color||meta.grad;
@@ -538,7 +356,7 @@ function card(c){
   const banner=`background:linear-gradient(135deg,${grad[0]},${grad[1]});`;
   const tags=(c.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('');
   const foot=c.verifyUrl
-    ? `<button class="verify" type="button" onclick="openBadge('${c.verifyUrl}','${(c.title||'').replace(/'/g,"\\'")}')">Voir le badge →</button>`
+    ? `<a class="verify" href="${c.verifyUrl}" target="_blank" rel="noopener">Vérifier le badge →</a>`
     : `<span class="verified">✓ Vérifié</span>`;
   return `
   <div class="card">
@@ -558,19 +376,8 @@ function card(c){
 }
 
 function render(){
-  if(current==="Tous"){
-    // Vue d'accueil : les collections, pas le détail
-    collectionsEl.style.display='grid';
-    grid.style.display='none';
-    backBar.style.display='none';
-    collectionsEl.innerHTML=issuers.filter(n=>n!=="Tous").map(collectionCard).join('');
-  }else{
-    // Vue détail : badges de l'organisme choisi
-    collectionsEl.style.display='none';
-    grid.style.display='grid';
-    backBar.style.display='block';
-    grid.innerHTML=certifications.filter(c=>c.issuer===current).map(card).join('');
-  }
+  const list=current==="Tous"?certifications:certifications.filter(c=>c.issuer===current);
+  grid.innerHTML=list.map(card).join('');
 }
 render();
 </script>
